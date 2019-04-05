@@ -1,0 +1,70 @@
+.paper {
+    padding: 20px 30px;
+    margin: 60px 0;
+    widht:100%;
+}
+
+.title{
+    font-family: "Arial Black";
+}
+.button{
+    margin: 10px 0 !important;
+    background-color: #009fb7 !important;
+    color: #2f2d2e !important;
+}
+
+@media only screen and (max-width: 600px) {
+.fix-width {
+    width: 90% !important;
+    }
+}
+
+.fix-width {
+    width: 555px;
+}
+
+.align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.app-bar {
+    background-color: #009fb7 !important;
+    color: #2f2d2e !important;
+}
+
+.app-bar {
+    background-color: #009fb7 !important;
+    color: #2f2d2e !important;
+}
+
+.app-bar1 {
+    background-color: #2e4057 !important;
+    color: white !important;
+}
+
+.toolbar{
+    text-align: center;
+}
+
+.white-text{
+    color: white;
+}
+
+.error-msg{
+    color: red;
+    float:left;
+}
+
+.snackbar{
+    background-color: #99c24d !important;
+    color:#2f2d2e !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+.icon{
+    font-size: 30;
+}
