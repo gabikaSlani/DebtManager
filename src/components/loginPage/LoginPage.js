@@ -8,18 +8,15 @@ const LoginPage = (props) => {
 
   return (
     <React.Fragment>
-      <AppBar position="static" className={styles["app-bar"]}>
+      <AppBar position="static" className={[styles.appBar, styles.paddinger].join(' ')}>
         <Toolbar className={styles.toolbar}>
           <h1 className={styles.title}>DEBT MANAGER</h1>
         </Toolbar>
       </AppBar>
-      <div className={styles["align-center"]}>
-        <div className={styles["fix-width"]}>
+      <div className={styles.paddinger}>
           <LoginForm {...props}/>
-          <h2 className={styles["white-text"]}>OR</h2>
           <RegistrationForm/>
         </div>
-      </div>
     </React.Fragment>
   );
 };

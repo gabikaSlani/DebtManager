@@ -83,7 +83,7 @@ class RegistrationForm extends React.Component {
     const {formData, errorMsg, openSnackbar} = this.state;
     return (
       <React.Fragment>
-        <Paper className={styles.paper}>
+        <Paper className={styles["paper-registration"]}>
           <Typography component="h1" variant="h5">Registration</Typography>
           <ValidatorForm ref="form" onSubmit={this.submit} onError={errors => console.log(errors)}>
             <FormControl margin="normal" required fullWidth>

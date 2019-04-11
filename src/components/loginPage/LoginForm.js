@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
   render() {
     const {formData, loginErrorMsg} = this.state;
     return (
-      <Paper className={styles.paper}>
+      <Paper className={styles["paper-login"]}>
         <Typography component="h1" variant="h5">Log in</Typography>
         <ValidatorForm ref="form" onSubmit={this.submit} onError={errors => console.log(errors)}>
           <FormControl margin="normal" required fullWidth>
@@ -57,7 +57,8 @@ class LoginForm extends React.Component {
               name="username"
               value={formData.username}
               validators={['required']}
-              errorMessages={['Username is required.']}/>
+              errorMessages={['Username is required.']}
+            />
           </FormControl>
           <FormControl margin="normal" required fullWidth>
             <TextValidator
@@ -78,44 +79,3 @@ class LoginForm extends React.Component {
 }
 
 export default LoginForm;
-
-
-
-// const LoginForm = (props) => {
-//   let userNameField = null;
-//   let passwordField = null;
-//
-//   const attachUserNameRef = r => {
-//     userNameField = r;
-//   };
-//
-//   const attachPasswordRef = r => {
-//     passwordField = r;
-//   };
-//
-//   const submit = () => {
-//     const userName = userNameField.value;
-//     const password = passwordField.value;
-//     console.log(userName, password);
-//     // TODO server.loginUser(userName, password)
-//     props.history.push('/home/'+userName);
-//   };
-//
-//   return (
-//       <Paper className={styles.paper}>
-//         <Typography component="h1" variant="h5">Log in</Typography>
-//         <form>
-//           <FormControl margin="normal" required fullWidth>
-//             <InputLabel htmlFor="username">Username</InputLabel>
-//             <Input id="username" name="username" autoComplete="username" autoFocus inputRef={attachUserNameRef}/>
-//           </FormControl>
-//           <FormControl margin="normal" required fullWidth>
-//             <InputLabel htmlFor="password">Password</InputLabel>
-//             <Input name="password" type="password" id="password" autoComplete="current-password"
-//                    inputRef={attachPasswordRef}/>
-//           </FormControl>
-//           <Button variant={"contained"} className={styles.button} onClick={submit}>Log in</Button>
-//         </form>
-//       </Paper>
-//   );
-// };

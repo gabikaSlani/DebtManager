@@ -1,70 +1,327 @@
-.paper {
+.paper-login {
     padding: 20px 30px;
     margin: 60px 0;
-    widht:100%;
+    width: 40% !important;
+    text-align: center;
+    float: left;
 }
-
-.title{
+.paper-registration{
+    padding: 20px 30px;
+    margin: 60px 0;
+    width: 40% !important;
+    text-align: center;
+    float: right;
+}
+.title {
     font-family: "Arial Black";
+    font-size: 2em;
+    margin: 0.5em 0;
 }
-.button{
+.paddinger{
+    padding: 0 15%;
+}
+.button {
     margin: 10px 0 !important;
     background-color: #009fb7 !important;
     color: #2f2d2e !important;
 }
 
-@media only screen and (max-width: 600px) {
-.fix-width {
-    width: 90% !important;
-    }
+.button-yes {
+    background-color: #99c24d !important;
+    color: #2f2d2e !important;
+}
+
+.button-no {
+    background-color: red !important;
+    color: #2f2d2e !important;
+}
+
+
+.button-green {
+    margin: 20px 0 0 0 !important;
+    background-color: #f18f01 !important;
+    color: #2f2d2e !important;
 }
 
 .fix-width {
-    width: 555px;
+    /*width: 555px;*/
 }
 
-.align-center {
+.alignCenter {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.app-bar {
+.appBar {
     background-color: #009fb7 !important;
     color: #2f2d2e !important;
 }
 
-.app-bar {
-    background-color: #009fb7 !important;
-    color: #2f2d2e !important;
-}
-
-.app-bar1 {
+.appBar1 {
     background-color: #2e4057 !important;
     color: white !important;
 }
 
-.toolbar{
+.toolbar {
     text-align: center;
+    padding: 0 !important;
 }
 
-.white-text{
+.white-text {
     color: white;
 }
 
-.error-msg{
+.error-msg {
     color: red;
-    float:left;
+    float: left;
 }
 
-.snackbar{
+.snackbar {
     background-color: #99c24d !important;
-    color:#2f2d2e !important;
+    color: #2f2d2e !important;
     width: 100%;
     max-width: 100%;
     padding: 0;
 }
-.icon{
-    font-size: 30;
+
+.icon {
+    font-size: 55px !important;
+}
+
+.badge span {
+    background-color: #f18f01;
+    color: black;
+}
+
+.badge {
+    margin: 0 -3px;
+}
+
+.align-left {
+    text-align: left;
+    vertical-align: center !important;
+}
+
+.align-right {
+    text-align: right;
+    vertical-align: middle !important;
+}
+
+.vertical-align {
+    vertical-align: middle !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.user-total {
+    font-size: 1.2em;
+    color: red;
+}
+
+.log-out-button {
+    background-color: #2e4057 !important;
+    color: white !important;
+}
+
+.check-button {
+    background-color: #99c24d !important;
+    font-size: 0.7em !important;
+    padding: 0px 0px !important;
+    margin: 0px 2px !important;
+}
+
+.cancel-button {
+    background-color: red !important;
+    font-size: 0.7em !important;
+    padding: 0px 0px !important;
+}
+
+.list-item-button {
+    position: relative !important;
+    padding: 3px !important;
+}
+
+.list-item-text {
+    padding-right: 5px !important;
+}
+
+.list-item-text span {
+    font-size: 1em !important;
+}
+
+.list {
+    max-height: 200px;
+    width: 300px;
+    position: relative;
+    overflow: auto;
+    padding-top: 5px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.list-item {
+    padding: 5px 0px !important;
+}
+.list-item-tabs:hover{
+    background-color: #9b9799 !important;
+    text-decoration: none !important;
+}
+.list-item-link-tabs:hover{
+    text-decoration: none !important;
+}
+.tabs {
+    background-color: #99c24d !important;
+}
+.tabs > div > div > span{
+    background-color: black !important;
+}
+
+.list-tabs {
+    position: relative !important;
+    overflow-y: auto !important;
+    height: 405px !important;
+    background-color: white !important;
+}
+.list-item-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+.paper-tabs{
+    width: 55% !important;
+    float: left;
+    margin-top: 30px;
+    height: 500px;
+    background-color: #99c24d !important;
+}
+
+.new-group-and-friend{
+    width: 35% !important;
+    float: right;
+    margin-top: 30px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.add-friend-form{
+    flex: 1 !important;
+    text-align: center;
+    background-color: #009fb7 !important;
+
+}
+.add-friend-form-input{
+    padding-bottom:10px !important;
+}
+.add-friend-form-input > div::after{
+    border-bottom: 2px solid #2e4057 !important;
+}
+.add-friend-list{
+    overflow-y: auto !important;
+    height: 350px !important;
+    background-color: white;
+}
+.add-friend-list-item:hover{
+    background-color: #9b9799 !important;
+}
+
+.add-new-friend-title{
+    padding-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold !important;
+}
+.badge-paper{
+    border: 3px solid #2e4057;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .paddinger{
+        padding: 0 5%;
+    }
+
+    .paper-registration{
+        width: 90% !important;
+        float: none !important;
+        padding: 5% 5% !important;
+        margin: 40px 0;
+    }
+    .paper-login{
+        width: 90% !important;
+        float: none !important;
+        padding: 5% 5% !important;
+        margin: 40px 0;
+    }
+    .title {
+        font-family: "Arial Black";
+        font-size: 1.5em;
+        margin: 0.2em 0;
+    }
+
+    .icon {
+        font-size: 45px !important;
+    }
+
+    .user-name {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .user-total {
+        font-size: 1em;
+        color: red;
+    }
+
+    .badge {
+        margin: 0 -7px;
+    }
+
+    .list {
+        max-width: 250px;
+        max-height: 200px;
+        padding-top: 5px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .list-item-text span {
+        font-size: 0.8em !important;
+    }
+
+
+    .paper-tabs{
+        width: 100% !important;
+        height: 300px;
+    }
+
+    .list-tabs{
+        height: 205px !important;
+    }
+
+    .new-group-and-friend{
+        width: 100% !important;
+        height: 300px !important;
+        margin-bottom: 30px !important;
+    }
+    .add-friend-form{
+        text-align: center;
+    }
+    .add-friend-list{
+        height: 150px !important;
+    }
 }
