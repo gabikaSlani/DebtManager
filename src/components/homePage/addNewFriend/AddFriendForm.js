@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component, Fragment} from 'react';
 import {
   InputAdornment,
   List,
@@ -10,11 +10,12 @@ import {
   Typography
 } from "@material-ui/core";
 import {AccountCircle, Search} from "@material-ui/icons";
-import styles from "../loginPage/loginForm.module.css";
 import AddFriendPopUp from "./AddFriendPopUp";
 
+import "./addNewFriend.css";
 
-class AddFriendForm extends React.Component {
+
+class AddFriendForm extends Component {
 
   state = {
     all: [{name: 'Johny'}, {name: 'Tom'}, {name: 'Sarah'}, {name: 'Tommy'}, {name: 'Stefan'}, {name: 'Lukas'},
@@ -44,11 +45,11 @@ class AddFriendForm extends React.Component {
 
   render() {
     const {displayed, dialogUser, open} = this.state;
-    console.log(displayed);
+
     return (
-      <React.Fragment>
-        <Paper className={styles["add-friend-form"]}>
-          <Typography className={styles["add-new-friend-title"]}>ADD NEW FRIEND</Typography>
+      <Fragment>
+        <Paper className="form-add-friend">
+          <Typography className="title-add-friend">ADD NEW FRIEND</Typography>
           <TextField
             InputProps={{
               startAdornment: (
@@ -58,11 +59,11 @@ class AddFriendForm extends React.Component {
               ),
             }}
             onChange={this.searchHandler}
-            className={styles["add-friend-form-input"]}
+            className="input-form-add-friend"
           />
-          <List className={styles["add-friend-list"]}>
+          <List className="list-add-friend">
             {displayed.map((item, index) =>
-              <ListItem key={item.name} id={item.name} button className={styles["add-friend-list-item"]}
+              <ListItem key={item.name} id={item.name} button className="item-list-add-friend"
                         onClick={() => this.handleClick(item)}
               >
                 <ListItemIcon><AccountCircle fontSize="large"/></ListItemIcon>
@@ -72,7 +73,7 @@ class AddFriendForm extends React.Component {
           </List>
         </Paper>
         <AddFriendPopUp open={open} username={dialogUser} handleClose={this.handleClose}/>
-      </React.Fragment>
+      </Fragment>
     );
   };
 };

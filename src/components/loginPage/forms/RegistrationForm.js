@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component, Fragment} from 'react';
 import {Button, FormControl, Paper, Snackbar, SnackbarContent, Typography} from "@material-ui/core";
-import styles from "./loginForm.module.css";
 import {TextValidator, ValidatorForm} from 'react-material-ui-form-validator';
-import {reset} from "@material-ui/core/es/SwipeableDrawer/SwipeableDrawer";
 
-class RegistrationForm extends React.Component {
+import "./forms.css";
+
+class RegistrationForm extends Component {
   state = {
     formData: {
       username: '',
@@ -26,7 +26,7 @@ class RegistrationForm extends React.Component {
 
   handleClose = () => {
     this.setState({openSnackbar: false});
-  }
+  };
 
   componentDidMount() {
     // custom rules
@@ -59,7 +59,7 @@ class RegistrationForm extends React.Component {
   userNameRef = (r) => {
     console.log(r);
     this.userNameField = r;
-  }
+  };
 
   userNameExists = (username) => {
     return ['Janko', 'Jozko', 'Johny'].includes(username);
@@ -76,14 +76,13 @@ class RegistrationForm extends React.Component {
       this.setState({openSnackbar: true});
       // TODO server.registerUser(userName, password, password2)
     }
-
   };
 
   render() {
     const {formData, errorMsg, openSnackbar} = this.state;
     return (
-      <React.Fragment>
-        <Paper className={styles["paper-registration"]}>
+      <Fragment>
+        <Paper className="paper-registration">
           <Typography component="h1" variant="h5">Registration</Typography>
           <ValidatorForm ref="form" onSubmit={this.submit} onError={errors => console.log(errors)}>
             <FormControl margin="normal" required fullWidth>
@@ -119,8 +118,8 @@ class RegistrationForm extends React.Component {
                 errorMessages={['Password is required.', 'Passwords mismatch.']}
               />
             </FormControl>
-            <span className={styles["error-msg"]}>{errorMsg}</span><br/><br/>
-            <Button variant={"contained"} className={styles.button} type="submit">Register</Button>
+            <span className="error-msg">{errorMsg}</span><br/><br/>
+            <Button variant={"contained"} className="form-button" type="submit">Register</Button>
           </ValidatorForm>
         </Paper>
         <Snackbar
@@ -132,9 +131,9 @@ class RegistrationForm extends React.Component {
           autoHideDuration={5000}
           onClose={this.handleClose}
         >
-          <SnackbarContent message="User was successfully registered." className={styles.snackbar}/>
+          <SnackbarContent message="User was successfully registered." className="snackbar"/>
         </Snackbar>
-      </React.Fragment>
+      </Fragment>
     );
   };
   }

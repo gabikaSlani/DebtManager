@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
-import LoginPage from "./loginPage/LoginPage"
+import './mainComponents.css';
+import LoginPage from "../loginPage/LoginPage";
 
-class App extends Component {
+
+class Login extends Component {
   constructor(props){
     super(props);
     this.state = {user: null};
@@ -10,7 +11,7 @@ class App extends Component {
 
   setUser = (userName) => {
     this.setState({user: userName});
-  }
+  };
 
   // callAPI(){
   //   fetch('http://localhost:9000/login')
@@ -26,11 +27,11 @@ class App extends Component {
   render() {
     const {user} = this.state;
     return (
-      <div className="App">
+      <div className="main-component">
         <LoginPage user={user} setUser={this.setUser} {...this.props}/>
       </div>
     );
   }
 }
 
-export default App;
+export default Login;

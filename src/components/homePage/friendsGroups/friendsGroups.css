@@ -1,0 +1,44 @@
+.paper-tabs{
+    width: 55% !important;
+    float: left;
+    margin-top: 30px;
+    height: 500px;
+    background-color: #99c24d !important;
+}
+
+.tabs {
+    background-color: #99c24d !important;
+}
+
+.tabs > div > div > span{
+    background-color: black !important;
+}
+
+.list-friends-groups {
+    position: relative !important;
+    overflow-y: auto !important;
+    height: 405px !important;
+    background-color: white !important;
+}
+
+.list-item-link-friends-groups:hover{
+    text-decoration: none !important;
+}
+
+.list-item-friends-groups:hover{
+    background-color: #9b9799 !important;
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .paper-tabs{
+        width: 100% !important;
+        height: 300px;
+    }
+
+    .list-friends-groups{
+        height: 205px !important;
+    }
+
+}

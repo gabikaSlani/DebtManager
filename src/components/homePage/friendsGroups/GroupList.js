@@ -1,9 +1,10 @@
-import React from "react";
+import React, {Component} from "react";
 import {List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
-import styles from "../loginPage/loginForm.module.css";
 import {Group} from "@material-ui/icons";
 
-class GroupList extends React.Component {
+import "./friendsGroups.css";
+
+class GroupList extends Component {
   constructor(props) {
     super(props);
 
@@ -18,10 +19,12 @@ class GroupList extends React.Component {
   render() {
     const {list} = this.state;
     return (
-      <List dense={false} className={styles["list-tabs"]}>
+      <List dense={false} className="list-friends-groups">
         {list.map((item, index) =>
           <ListItem key={index}>
-            <ListItemIcon><Group fontSize="large"/></ListItemIcon>
+            <ListItemIcon>
+              <Group fontSize="large"/>
+            </ListItemIcon>
             <ListItemText primary={item.name} secondary={item.debt} />
           </ListItem>
         )}

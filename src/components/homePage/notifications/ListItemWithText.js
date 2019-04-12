@@ -1,21 +1,22 @@
-import React from 'react';
-import styles from "../loginPage/loginForm.module.css";
+import React, {Fragment} from 'react';
 import {Divider, ListItem, ListItemText} from "@material-ui/core";
+
+import "./notifications.css";
 
 const ListItemWithText = (props) => {
 
   const {text} = props;
 
   return (
-    <React.Fragment>
-      <ListItem className={styles["list-item"]}>
+    <Fragment>
+      <ListItem className="notification-list-item">
         <ListItemText
           primary={text}
-          className={styles["list-item-text"]}
+          className="notification-list-item-text"
         />
       </ListItem>
       <Divider/>
-    </React.Fragment>
+    </Fragment>
   )
 };
 

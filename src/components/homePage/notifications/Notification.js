@@ -1,11 +1,11 @@
-import styles from "../loginPage/loginForm.module.css";
+import React, {Component, Fragment} from "react";
 import {Error, EuroSymbol, PersonAdd} from "@material-ui/icons";
 import {Badge, ClickAwayListener, Grow, IconButton, List, Paper, Popper} from "@material-ui/core";
-import React from "react";
 import ListItemWithButtons from "./ListItemWithButtons";
 
+import "./notifications.css";
 
-class MyBadge extends React.Component {
+class Notification extends Component {
 
   constructor(props) {
     super(props);
@@ -51,14 +51,13 @@ class MyBadge extends React.Component {
     const {open, badgeNumber, isInvisible, type} = this.state;
 
     return (
-
-      <React.Fragment>
+      <Fragment>
         <IconButton color="inherit"
                     buttonRef={node => { this.anchorEl = node; }}
                     aria-owns={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleToggle}>
-          <Badge badgeContent={badgeNumber} color="primary" invisible={isInvisible} className={styles.badge}>
+          <Badge badgeContent={badgeNumber} color="primary" invisible={isInvisible} className="badge">
             {type === 'friendship' ? <PersonAdd fontSize="large"/> :
               (type === 'payment' ? <EuroSymbol fontSize="large"/> :
                 <Error fontSize="large"/>)
@@ -71,9 +70,9 @@ class MyBadge extends React.Component {
               {...TransitionProps}
               id="menu-list-grow"
             >
-              <Paper className={styles["badge-paper"]}>
+              <Paper className="notification-paper">
                 <ClickAwayListener onClickAway={this.handleClose}>
-                  <List dense={false} className={styles["list"]}>
+                  <List dense={false} className="notification-list">
                     {this.generate(
                       <ListItemWithButtons messageText='bl jvsodvdo s oisbdvoj scjb osb os obsoi bosb sdo bois i scib siob obo siocb isba' messageType='friendship'/>,
                     )}
@@ -83,9 +82,9 @@ class MyBadge extends React.Component {
             </Grow>
           )}
         </Popper>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
 
-export default MyBadge;
+export default Notification;

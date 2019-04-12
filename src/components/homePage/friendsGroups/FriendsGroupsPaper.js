@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Paper, Tab, Tabs} from "@material-ui/core";
 import {AccountCircle, Group} from "@material-ui/icons";
-import styles from "../loginPage/loginForm.module.css";
 import FriendList from "./FriendList";
 import GroupList from "./GroupList";
 
-class Tabings extends React.Component {
+import "./friendsGroups.css";
+
+class FriendsGroupsPaper extends Component {
   constructor(props) {
     super(props);
 
@@ -23,12 +24,12 @@ class Tabings extends React.Component {
     const {user} = this.props;
 
     return (
-      <Paper className={styles["paper-tabs"]}>
+      <Paper className="paper-tabs">
         <Tabs
           value={value}
           onChange={this.handleChange}
           variant="fullWidth"
-          className={styles.tabs}
+          className="tabs"
           indicatorColor="primary"
         >
           <Tab icon={<AccountCircle/>} label="Friends"/>
@@ -41,4 +42,4 @@ class Tabings extends React.Component {
   }
 }
 
-export default Tabings;
+export default FriendsGroupsPaper;

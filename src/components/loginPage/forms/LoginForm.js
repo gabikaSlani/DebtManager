@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button, FormControl, Paper, Typography} from "@material-ui/core";
-import styles from './loginForm.module.css';
 import {TextValidator, ValidatorForm} from 'react-material-ui-form-validator';
 
-class LoginForm extends React.Component {
+import "./forms.css";
+
+class LoginForm extends Component {
   state = {
     formData: {
       username: '',
@@ -47,7 +48,7 @@ class LoginForm extends React.Component {
   render() {
     const {formData, loginErrorMsg} = this.state;
     return (
-      <Paper className={styles["paper-login"]}>
+      <Paper className="paper-login">
         <Typography component="h1" variant="h5">Log in</Typography>
         <ValidatorForm ref="form" onSubmit={this.submit} onError={errors => console.log(errors)}>
           <FormControl margin="normal" required fullWidth>
@@ -70,8 +71,8 @@ class LoginForm extends React.Component {
               validators={['required']}
               errorMessages={['Password is required.']}/>
           </FormControl>
-          <span className={styles["error-msg"]}>{loginErrorMsg}</span><br/><br/>
-          <Button variant={"contained"} type="submit" className={styles.button}>Log in</Button>
+          <span className="error-msg">{loginErrorMsg}</span><br/><br/>
+          <Button variant={"contained"} type="submit" className="form-button">Log in</Button>
         </ValidatorForm>
       </Paper>
     );

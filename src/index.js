@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
-import Home from './components/Home';
-import Friend from './components/Friend';
-import NotFound from './components/NotFound';
+import Login from './components/mainComponents/Login';
+import Home from './components/mainComponents/Home';
+import Friend from './components/mainComponents/Friend';
+import NotFound from './components/mainComponents/NotFound';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
@@ -12,7 +12,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 const routing = (
   <BrowserRouter>
       <Switch>
-      <Route exact path="/" component={App}/>
+      <Route exact path="/" component={Login}/>
       <Route path="/home/:id" component={Home}/>
       <Route path="/friend/:userId/:friendId" component={Friend}/>
       <Route component={NotFound}/>

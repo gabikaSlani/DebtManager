@@ -1,0 +1,10 @@
+.paddinger {
+    padding: 0 15%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .paddinger{
+        padding: 0 5%;
+    }
+}
