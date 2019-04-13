@@ -25,7 +25,7 @@
 
 .user-total {
     font-size: 1.2em;
-    color: red;
+    color: #f18f01;
 }
 
 .spacer {
@@ -45,6 +45,6 @@
 
     .user-total {
         font-size: 1em;
-        color: red;
+        color: #f18f01;
     }
 }

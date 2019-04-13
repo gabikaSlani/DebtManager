@@ -1,8 +1,16 @@
-.button-orange {
+.new-button {
     margin: 20px 0 0 0 !important;
     background-color: #f18f01 !important;
     color: #2f2d2e !important;
     font-weight: bold !important;
+
+}
+
+.new-item-btn{
+    width: 41.5% !important;
+}
+.new-group-btn{
+    width: 48.5% !important;
 }
 
 .new-group-and-friend{
@@ -12,6 +20,13 @@
     height: 500px;
     display: flex;
     flex-direction: column;
+}
+
+.new-item-group-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
 }
 
 

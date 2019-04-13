@@ -26,7 +26,7 @@ class LoginForm extends Component {
 
   passwordIsCorrect = (username, password) => {
     return username === password;
-  }
+  };
 
   submit = () => {
     const { formData } = this.state;

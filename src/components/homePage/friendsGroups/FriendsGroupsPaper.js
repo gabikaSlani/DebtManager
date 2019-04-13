@@ -21,7 +21,7 @@ class FriendsGroupsPaper extends Component {
 
   render() {
     const {value} = this.state;
-    const {user} = this.props;
+    const {user, setUser} = this.props;
 
     return (
       <Paper className="paper-tabs">
@@ -35,7 +35,7 @@ class FriendsGroupsPaper extends Component {
           <Tab icon={<AccountCircle/>} label="Friends"/>
           <Tab icon={<Group/>} label="Groups"/>
         </Tabs>
-        {value === 0 && <FriendList user={user}/>}
+        {value === 0 && <FriendList user={user} setUser={setUser}/>}
         {value === 1 && <GroupList/>}
       </Paper>
     );

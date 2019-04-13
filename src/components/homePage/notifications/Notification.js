@@ -64,7 +64,7 @@ class Notification extends Component {
             }
           </Badge>
         </IconButton>
-        <Popper open={open} anchorEl={this.anchorEl} placement="bottom-end" transition>
+        <Popper open={open} anchorEl={this.anchorEl} placement="bottom-end" transition className="popper">
           {({TransitionProps}) => (
             <Grow
               {...TransitionProps}

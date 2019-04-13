@@ -1,23 +1,26 @@
 import React, {Component} from 'react';
+import FriendPage from "../friendPage/FriendPage";
 import './mainComponents.css';
-import Header from "./header/Header";
 
 class Friend extends Component {
 
-  state = {
-    userId: this.props.match.userId,
-    friendId: this.props.match.friendId
-  };
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+    this.state = {
+      userId: this.props.match.params.userId,
+      friendId: this.props.match.params.friendId
+    };
+  }
+
+
 
   render() {
     const {userId, friendId} = this.state;
     return (
-      <div className="main-component">
-        <Header logged={false} >
-          <p>{userId}</p>
-          <p>{friendId}</p>
-        </Header>
-      </div>
+        <div className="main-component">
+          <FriendPage user={userId}/>
+        </div>
     );
   };
 }

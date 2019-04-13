@@ -7,6 +7,10 @@
     color: black;
 }
 
+.popper{
+    z-index:2;
+}
+
 .notification-paper{
     border: 3px solid #2e4057;
 }
