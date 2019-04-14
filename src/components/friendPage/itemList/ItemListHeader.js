@@ -40,7 +40,7 @@ class ItemListHeader extends Component {
             <Button className="button-orange">Settle up</Button>
           </div>
         </ListSubheader>
-          <AddItemPupUp open={open} handleClose={this.handleClose} chips={true}/>
+          <AddItemPupUp open={open} handleClose={this.handleClose} chips={false}/>
       </Fragment>
     );
   }

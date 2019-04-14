@@ -61,7 +61,7 @@ class HomePage extends Component{
                 </div>
               </div>
             </div>
-            <AddItemPupUp open={open} handleClose={this.handleClose} chips={false}/>
+            <AddItemPupUp open={open} handleClose={this.handleClose} chips={true}/>
           </div>
         }
       </Fragment>
