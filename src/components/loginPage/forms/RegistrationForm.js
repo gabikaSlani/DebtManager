@@ -15,8 +15,6 @@ class RegistrationForm extends Component {
     openSnackbar: false
   };
 
-  userNameField = null;
-
   handleChange = (event) => {
     const {formData} = this.state;
     formData[event.target.name] = event.target.value;
@@ -37,45 +35,59 @@ class RegistrationForm extends Component {
       return true;
     });
     ValidatorForm.addValidationRule('minSize5', (value) => {
-      if (value.length > 0 && value.length < 5) {
+      if (value && value.length > 0 && value.length < 5) {
         return false;
       }
       return true;
     });
     ValidatorForm.addValidationRule('minSize8', (value) => {
-      if (value.length > 0 && value.length < 8) {
+      if (value && value.length > 0 && value.length < 8) {
         return false;
       }
       return true;
     });
     ValidatorForm.addValidationRule('maxSize15', (value) => {
-      if (value.length > 15) {
+      if ( value && value.length > 15) {
         return false;
       }
       return true;
     });
   };
 
-  userNameRef = (r) => {
-    console.log(r);
-    this.userNameField = r;
+  tryRegistrate = (username, password) => {
+    fetch('http://localhost:9000/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        login: username,
+        password: password
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+        if(res){
+          this.setState({openSnackbar: true});
+          this.cleanFormData();
+        }
+        else {
+          this.setState({errorMsg: 'Username already exists.'});
+        }
+      })
+      .catch(err => err);
   };
 
-  userNameExists = (username) => {
-    return ['Janko', 'Jozko', 'Johny'].includes(username);
+  cleanFormData = () => {
+    let {formData} = this.state;
+    formData = {username: '', password: '', repeatPassword: ''};
+    this.setState({formData});
   };
 
   submit = () => {
     let {formData} = this.state;
-    if (this.userNameExists(formData.username)) {
-      this.setState({errorMsg: 'Username already exists.'});
-    } else {
-      console.log(formData.username, formData.password, formData.repeatPassword);
-      formData = {username: '', password: '', repeatPassword: ''};
-      this.setState({formData});
-      this.setState({openSnackbar: true});
-      // TODO server.registerUser(userName, password, password2)
-    }
+    this.tryRegistrate(formData.username, formData.password);
   };
 
   render() {
@@ -93,7 +105,6 @@ class RegistrationForm extends Component {
                 value={formData.username}
                 validators={['required', 'minSize5', 'maxSize15']}
                 errorMessages={['Username is required.', 'Minimum required size is 5.', 'Maximum required size is 15.']}
-                inputRef={this.userNameRef}
               />
             </FormControl>
             <FormControl margin="normal" required fullWidth>
@@ -136,6 +147,6 @@ class RegistrationForm extends Component {
       </Fragment>
     );
   };
-  }
+}
 
-  export default RegistrationForm;
+export default RegistrationForm;

@@ -10,7 +10,7 @@ import './homePage.css';
 import "../paddinger.css";
 
 
-class HomePage extends Component{
+class HomePage extends Component {
 
   state = {open: false};
 
@@ -20,6 +20,7 @@ class HomePage extends Component{
 
   logout = () => {
     this.props.setUser(null);
+    window.sessionStorage.removeItem('logged');
     this.props.history.push('/');
   };
 
@@ -31,18 +32,24 @@ class HomePage extends Component{
     this.setState({open: false});
   };
 
-
-  render(){
-
+  render() {
+    console.log('session' + window.sessionStorage.getItem('logged'));
     const {user, setUser} = this.props;
     const {open} = this.state;
     return (
       <Fragment>
-        <Header logged={true} logout={this.logout}/>
-        {!user ?
-          <div>Nikto nie je prihlaseny</div>
+        {!(user && window.sessionStorage.getItem('logged'))
+          ?
+          <Fragment>
+            <Header logged={false}/>
+            <div className="paddinger">
+              <h4 className="red-message">No user is logged in.</h4>
+              <Button variant={"contained"} type="submit" className="form-button" onClick={this.logout}>Log in</Button>
+            </div>
+          </Fragment>
           :
           <div>
+            <Header logged={true} logout={this.logout}/>
             <UserHeader user={user}/>
             <div className="paddinger">
               <FriendsGroupsPaper user={user} setUser={setUser}/>

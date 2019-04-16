@@ -7,6 +7,7 @@ import Friend from './components/mainComponents/Friend';
 import NotFound from './components/mainComponents/NotFound';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import ErrorPage from "./components/mainComponents/ErrorPage";
 
 
 const routing = (
@@ -15,6 +16,7 @@ const routing = (
       <Route exact path="/" component={Login}/>
       <Route path="/home/:id" component={Home}/>
       <Route path="/friend/:userId/:friendId" component={Friend}/>
+      <Route path="/error" component={ErrorPage}/>
       <Route component={NotFound}/>
       </Switch>
   </BrowserRouter>

@@ -29,6 +29,11 @@
     height: 100%;
 }
 
+.red-message{
+    color: #f18f01;
+    font-weight: bold !important;
+}
+
 
 @media only screen and (max-width: 600px) {
 

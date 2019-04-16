@@ -10,7 +10,8 @@ class LoginForm extends Component {
       username: '',
       password: ''
     },
-    loginErrorMsg:''
+    loginErrorMsg: '',
+    validForm: false
   };
 
   handleChange = (event) => {
@@ -20,29 +21,40 @@ class LoginForm extends Component {
     this.setState({loginErrorMsg: ''});
   };
 
-  userIsRegistered = (username) => {
-    return ['Janko', 'Jozko', 'Johny'].includes(username);
+  validData = (username, password) => {
+    fetch('http://localhost:9000/login', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        login: username,
+        password: password
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+          if (res.valid) {
+            window.sessionStorage.setItem('logged', 'true');
+            this.props.history.push('/home/' + res.id);
+          } else {
+            this.setState({loginErrorMsg: 'Invalid username or password'});
+          }
+        }
+      )
+      .catch(err => err);
   };
 
-  passwordIsCorrect = (username, password) => {
-    return username === password;
+  cleanFormData = () => {
+    let {formData} = this.state;
+    formData = {username: '', password: ''};
+    this.setState({formData});
   };
 
   submit = () => {
-    const { formData } = this.state;
-    console.log(formData.username, formData.password);
-    // TODO server.loginUser(userName, password)
-    if(!this.userIsRegistered(formData.username)){
-      this.setState({loginErrorMsg: 'User is not registered.'});
-      return;
-    }
-    if(!this.passwordIsCorrect(formData.username, formData.password)){
-      this.setState({loginErrorMsg: 'Password is incorrect.'});
-    }
-    else {
-      this.props.history.push('/home/' + formData.username);
-    }
-
+    const {formData} = this.state;
+    this.validData(formData.username, formData.password);
   };
 
   render() {

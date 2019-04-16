@@ -3,7 +3,8 @@
 }
 
 .not-found{
-  color: red;
+  color: #f18f01;
+  font-weight: bold !important;
 }
 
 

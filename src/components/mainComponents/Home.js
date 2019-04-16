@@ -15,6 +15,11 @@ class Home extends Component {
   };
 
   componentDidMount() {
+    fetch('http://localhost:9000/home/:id')
+      .then(res => res.json())
+      //TODO chytit zo servera celeho usera a vlozit do stavu
+      .then(res => console.log(res))
+      .catch(err => err);
     this.setUser(this.props.match.params.id);
   };
 
