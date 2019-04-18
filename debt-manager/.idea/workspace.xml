@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b77ba13-682e-487b-82f6-295c3808543a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/NotFound.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/homePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/loginPage/LoginForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/loginPage/RegistrationForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/loginPage/loginForm.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/serviceWorker.js" afterDir="false" />
-    </list>
+    <list default="true" id="3b77ba13-682e-487b-82f6-295c3808543a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -227,50 +208,7 @@
             <path>
               <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="loginPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="loginPage" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="mainComponents" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -286,7 +224,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -338,7 +276,7 @@
       <workItem from="1555235633558" duration="865000" />
       <workItem from="1555259945249" duration="1718000" />
       <workItem from="1555398338497" duration="30044000" />
-      <workItem from="1555575270156" duration="1177000" />
+      <workItem from="1555575270156" duration="1790000" />
     </task>
     <task id="LOCAL-00001" summary="login page">
       <created>1554502754704</created>
@@ -393,7 +331,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219146000" />
+    <option name="totallyTimeSpent" value="219759000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,7 +345,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26305354" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26305354" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -418,7 +356,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49966952" visible="true" weight="0.34135976" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49966952" visible="true" weight="0.34135976" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3895184" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.38243628" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -493,6 +431,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="login page" />
     <MESSAGE value="frontend login and home" />
     <MESSAGE value="add missing files" />
