@@ -10,20 +10,25 @@ class Home extends Component {
     };
   }
 
-  setUser = (userName) => {
-    this.setState({user: userName});
+  setUserInfo = (userInfo) => {
+    this.setState({user: {info: userInfo}})
+  };
+
+  setUser = (user) => {
+    this.setState({user: user});
   };
 
   componentDidMount() {
-    fetch('http://localhost:9000/home/:id')
+    console.log('mountujem');
+    let url = 'http://localhost:9000/home/' + this.props.match.params.id;
+    fetch(url)
       .then(res => res.json())
-      //TODO chytit zo servera celeho usera a vlozit do stavu
-      .then(res => console.log(res))
-      .catch(err => err);
-    this.setUser(this.props.match.params.id);
+      .then(res => this.setUserInfo(res[0]))
+      .catch(err => console.log(err));
   };
 
   render() {
+    console.log('renderujem');
     const {user} = this.state;
     return (
       <div className="main-component">

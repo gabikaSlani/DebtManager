@@ -35,7 +35,7 @@ class FriendsGroupsPaper extends Component {
           <Tab icon={<AccountCircle/>} label="Friends"/>
           <Tab icon={<Group/>} label="Groups"/>
         </Tabs>
-        {value === 0 && <FriendList user={user} setUser={setUser}/>}
+        {value === 0 && <FriendList user={user}/>}
         {value === 1 && <GroupList/>}
       </Paper>
     );

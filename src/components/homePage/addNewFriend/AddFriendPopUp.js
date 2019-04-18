@@ -4,11 +4,15 @@ import {Button, Dialog, DialogActions, DialogTitle} from "@material-ui/core";
 import "./addNewFriend.css";
 
 const AddFriendPopUp = (props) => {
-  const {open, username, handleClose} = props;
+  const {open, friend, handleClose} = props;
+  const friendName = friend ? friend.login : '';
 
   const handleYes = () => {
-    //TODO pridaj kamosa na serveri
-    handleClose();
+    let url = 'http://localhost:9000/home/add/friend/' + props.match.params.id + '/' + friend.id;
+    fetch(url)
+      .then(res => res.json())
+      .then(() => handleClose())
+      .catch(err => console.log(err));
   };
 
   const handleNo = () => {
@@ -16,8 +20,9 @@ const AddFriendPopUp = (props) => {
   };
 
   return (
+
     <Dialog open={open}>
-      <DialogTitle>{"Do you want to add a new friend with username: " + username + "?"}</DialogTitle>
+      <DialogTitle>{"Do you want to add a new friend with username: " + friendName + "?"}</DialogTitle>
       <DialogActions>
         <Button onClick={handleYes} className="button-yes" autoFocus>
           Yes

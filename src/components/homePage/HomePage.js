@@ -32,29 +32,24 @@ class HomePage extends Component {
     this.setState({open: false});
   };
 
+  loggedUserIdInUrl = () => {
+    return this.props.match.params.id === window.sessionStorage.getItem('logged');
+  };
+
   render() {
-    console.log('session' + window.sessionStorage.getItem('logged'));
     const {user, setUser} = this.props;
     const {open} = this.state;
     return (
       <Fragment>
-        {!(user && window.sessionStorage.getItem('logged'))
+        {user && this.loggedUserIdInUrl()
           ?
-          <Fragment>
-            <Header logged={false}/>
-            <div className="paddinger">
-              <h4 className="red-message">No user is logged in.</h4>
-              <Button variant={"contained"} type="submit" className="form-button" onClick={this.logout}>Log in</Button>
-            </div>
-          </Fragment>
-          :
           <div>
             <Header logged={true} logout={this.logout}/>
             <UserHeader user={user}/>
             <div className="paddinger">
               <FriendsGroupsPaper user={user} setUser={setUser}/>
               <div className="new-group-and-friend">
-                <AddFriendForm/>
+                <AddFriendForm {...this.props}/>
                 <div className="new-item-group-buttons">
                   <Button
                     variant={"contained"}
@@ -70,6 +65,14 @@ class HomePage extends Component {
             </div>
             <AddItemPupUp open={open} handleClose={this.handleClose} chips={true}/>
           </div>
+          :
+          <Fragment>
+            <Header logged={false}/>
+            <div className="paddinger">
+              <h4 className="red-message">No user is logged in.</h4>
+              <Button variant={"contained"} type="submit" className="form-button" onClick={this.logout}>Log in</Button>
+            </div>
+          </Fragment>
         }
       </Fragment>
     );

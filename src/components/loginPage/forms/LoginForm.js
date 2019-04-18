@@ -36,7 +36,7 @@ class LoginForm extends Component {
       .then(res => res.json())
       .then(res => {
           if (res.valid) {
-            window.sessionStorage.setItem('logged', 'true');
+            window.sessionStorage.setItem('logged', res.id);
             this.props.history.push('/home/' + res.id);
           } else {
             this.setState({loginErrorMsg: 'Invalid username or password'});

@@ -15,7 +15,7 @@ const UserHeader = (props) => {
         <div className="user-info">
           <AccountCircle className="user-icon"/>
           <div>
-            <div className="user-name">{user}</div>
+            <div className="user-name">{user.info.login}</div>
             <div className="user-total">{total}</div>
           </div>
         </div>
