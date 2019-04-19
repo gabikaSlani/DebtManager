@@ -85,17 +85,17 @@ const addFriend = (request, response) => {
   }
   else{
     console.log(userId, friendId);
-    pool.query('INSERT INTO friends (user1_id, user2_id) VALUES ($1, $2)', [userId, friendId], (error, results) => {
+    pool.query('INSERT INTO friends (user1_id, user2_id) VALUES ($1, $2), ($2, $1) RETURNING *',
+      [userId, friendId], (error, results) => {
       if (error) {
         throw error;
       }
-    });
-    pool.query('INSERT INTO friends (user1_id, user2_id) VALUES ($1, $2)', [friendId, userId], (error, results) => {
-      if (error) {
-        throw error;
+      else{
+        console.log(results.rows);
+        response.status(200).send(true);
       }
     });
-    response.status(200).send(true);
+
   }
 };
 
@@ -108,13 +108,37 @@ const getTotal = (request, response) => {
   else{
     console.log(id);
     pool.query('SELECT ' +
-      '(SELECT coalesce(sum(amount), 0) FROM debts WHERE settled = false AND receiver_id = $1) ' +
+      '((SELECT coalesce(sum(amount), 0) FROM debts WHERE settled = false AND receiver_id = $1) ' +
       '- ' +
-      '(SELECT coalesce(sum(amount),0) FROM debts WHERE settled = false AND payer_id = $1)', [id], (error, results) => {
+      '(SELECT coalesce(sum(amount),0) FROM debts WHERE settled = false AND payer_id = $1)) as total', [id], (error, results) => {
       if (error) {
         throw error;
       }
-      response.status(200).send(true);
+      response.status(200).send(results.rows[0].total);
+    });
+  }
+};
+
+const getFriends = (request, response) => {
+  const id = parseInt(request.params.id);
+  if(isNaN(id)){
+    console.log('id is NaN');
+    throw error;
+  }
+  else{
+    pool.query('SELECT a.id, a.debt, users.login FROM users JOIN '+
+    '(SELECT '+
+    'user2_id as id, ' +
+    '((Select coalesce(sum(amount), 0) from debts WHERE receiver_id = $1 AND payer_id = user2_id AND settled=false) '+
+    '- '+
+    '(Select coalesce(sum(amount), 0) from debts WHERE payer_id = $1 And receiver_id = user2_id AND settled=false)) as debt '+
+    'from friends WHERE user1_id = $1) as a ON a.id = users.id ORDER BY abs(debt) DESC',
+      [id], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      console.log(results.rows);
+      response.status(200).json(results.rows);
     });
   }
 };
@@ -132,17 +156,7 @@ module.exports = {
   getAllUsersExceptMeAndFriends,
   addFriend,
   getTotal,
+  getFriends,
 
 };
 
- /*vrati vsetkych ktorym je 40 dlzna + kolko*/
-/*SELECT sum(amount), debts.receiver_id FROM debts JOIN (SELECT user2_id FROM friends WHERE user1_id = 40) as friends
-ON debts.receiver_id = friends.user2_id
-WHERE debts.settled = false AND debts.payer_id = 40
-GROUP BY debts.receiver_id*/
-
-/*vrati vsetkych ktori dlzia 40 + kolko*/
-/*SELECT sum(amount), debts.payer_id FROM debts JOIN (SELECT user2_id FROM friends WHERE user1_id = 40) as friends
-ON debts.payer_id = friends.user2_id
-WHERE debts.settled = false AND debts.receiver_id = 40
-GROUP BY debts.payer_id*/
