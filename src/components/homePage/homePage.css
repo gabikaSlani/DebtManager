@@ -12,6 +12,12 @@
 .new-group-btn{
     width: 48.5% !important;
 }
+.new-group-btn:hover{
+    background-color: #fea31b !important;
+}
+.new-item-btn:hover{
+    background-color: #fea31b !important;
+}
 
 .new-group-and-friend{
     width: 35% !important;
@@ -30,7 +36,7 @@
 }
 
 .red-message{
-    color: #f18f01;
+    color: #f03228;
     font-weight: bold !important;
 }
 

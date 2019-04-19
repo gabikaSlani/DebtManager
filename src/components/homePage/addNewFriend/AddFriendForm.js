@@ -30,16 +30,24 @@ class AddFriendForm extends Component {
     this.lastQuery = '';
   };
 
+  setAllAndDisplayed = (array) => {
+    this.setState({all: array});
+    this.setState({displayed: array});
+  };
+
+  asyncSetAll = async (array) => {
+    await this.setState({all: array});
+  };
+
   componentDidMount() {
     this.fetchNotFriends()
       .then(res => {
-      this.setState({all: res});
-      this.setState({displayed: res});
+        this.setAllAndDisplayed(res);
     })
   }
 
   fetchNotFriends = () => {
-    let url = 'http://localhost:9000/home/users/' + this.props.match.params.id;
+    let url = 'http://localhost:9000/home/users/' + sessionStorage.getItem('logged');
     return fetch(url)
       .then(res => res.json())
       .catch(err => console.log(err));
@@ -51,10 +59,6 @@ class AddFriendForm extends Component {
   };
 
   filterUsers = (query) => {
-    console.log('lst query:' + this.lastQuery);
-    console.log('all: displayed:');
-    console.log(this.state.all);
-    console.log(this.state.displayed);
     let filtered = this.state.all.filter((el) => {
       let searchValue = el.login.toLowerCase();
       return searchValue.indexOf(query) !== -1;
@@ -67,15 +71,14 @@ class AddFriendForm extends Component {
     this.setState({open: true});
   };
 
-  handleClose = () => {
-    this.setState({open: false});
+    handleClose = () => {
     this.fetchNotFriends()
       .then((res) => {
-        this.setState({all: res});
-        this.setState({displayed: res});
-        this.filterUsers(this.lastQuery);
+        this.asyncSetAll(res)
+          .then(() => {this.filterUsers(this.lastQuery) ;    this.setState({open: false});})
       });
   };
+
 
   render() {
     const {displayed, dialogUser, open} = this.state;

@@ -3,8 +3,19 @@
 }
 
 .not-found{
-  color: #f18f01;
+  color: #f03228;
   font-weight: bold !important;
 }
 
+.center{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.loading{
+  width: 100px !important;
+  height: 100px !important;
+  color: #f18f01 !important;
+}
 

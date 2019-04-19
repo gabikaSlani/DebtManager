@@ -37,7 +37,7 @@ class HomePage extends Component {
   };
 
   render() {
-    const {user, setUser} = this.props;
+    const {user} = this.props;
     const {open} = this.state;
     return (
       <Fragment>
@@ -47,7 +47,7 @@ class HomePage extends Component {
             <Header logged={true} logout={this.logout}/>
             <UserHeader user={user}/>
             <div className="paddinger">
-              <FriendsGroupsPaper user={user} setUser={setUser}/>
+              <FriendsGroupsPaper user={user}/>
               <div className="new-group-and-friend">
                 <AddFriendForm {...this.props}/>
                 <div className="new-item-group-buttons">

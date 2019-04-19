@@ -8,7 +8,7 @@ const AddFriendPopUp = (props) => {
   const friendName = friend ? friend.login : '';
 
   const handleYes = () => {
-    let url = 'http://localhost:9000/home/add/friend/' + props.match.params.id + '/' + friend.id;
+    let url = 'http://localhost:9000/home/add/friend/' + sessionStorage.getItem('logged') + '/' + friend.id;
     fetch(url)
       .then(res => res.json())
       .then(() => handleClose())

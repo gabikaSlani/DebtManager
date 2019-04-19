@@ -7,7 +7,6 @@ import "./userHeader.css";
 import "../../paddinger.css";
 
 const UserHeader = (props) => {
-  const total = "12.45€";
   const {user} = props;
   return (
     <AppBar position="static" className="appBar-user paddinger">
@@ -16,7 +15,13 @@ const UserHeader = (props) => {
           <AccountCircle className="user-icon"/>
           <div>
             <div className="user-name">{user.info.login}</div>
-            <div className="user-total">{total}</div>
+            {user.total == 0
+              ? <div className="user-total settled">{user.total}€</div>
+              : (user.total < 0
+                  ? <div className="user-total minus-amount">{user.total}€</div>
+                  : <div className="user-total plus-amount">+{user.total}€</div>
+              )
+            }
           </div>
         </div>
         <span className="spacer"/>

@@ -21,7 +21,7 @@ class FriendsGroupsPaper extends Component {
 
   render() {
     const {value} = this.state;
-    const {user, setUser} = this.props;
+    const {user} = this.props;
 
     return (
       <Paper className="paper-tabs">

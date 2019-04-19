@@ -26,8 +26,25 @@
 }
 
 .list-item-friends-groups:hover{
-    background-color: #9b9799 !important;
+    background-color:  #827d80 !important;
     text-decoration: none !important;
+}
+
+.list-item-icon-friends-groups{
+    font-size: 55px !important;
+}
+
+.list-name-friends-groups {
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+}
+
+.list-total-friends-groups {
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {
@@ -40,5 +57,18 @@
     .list-friends-groups{
         height: 205px !important;
     }
+
+    .list-item-icon-friends-groups{
+        font-size: 45px !important;
+    }
+
+    .list-name-friends-groups {
+        font-size: 1em;
+    }
+
+    .list-total-friends-groups {
+        font-size: 0.9em;
+    }
+
 
 }
