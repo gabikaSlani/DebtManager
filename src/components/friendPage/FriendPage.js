@@ -12,14 +12,15 @@ class FriendPage extends Component {
   }
 
   render() {
-    const {user} = this.props;
-
+    const {user, friend, debt, items} = this.props;
+    console.log('friend page');
+    console.log(user);
     return (
       <Fragment>
         <Header logged={false}/>
         <UserHeader user={user}/>
         <div className="paddinger">
-          <ItemList user={user}/>
+          <ItemList friend={friend} debt={debt} items={items}/>
         </div>
       </Fragment>
     );

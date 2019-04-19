@@ -31,7 +31,7 @@
 .list-add-friend{
     overflow-y: auto !important;
     height: 350px !important;
-    background-color: white;
+    background-color: #f3f2f2;
 }
 
 .item-list-add-friend:hover{

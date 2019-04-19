@@ -8,6 +8,7 @@ import AddItemPupUp from "../friendPage/addItemPopUp/AddItemPupUp";
 
 import './homePage.css';
 import "../paddinger.css";
+import NotLogged from "../mainComponents/NotLogged";
 
 
 class HomePage extends Component {
@@ -66,13 +67,7 @@ class HomePage extends Component {
             <AddItemPupUp open={open} handleClose={this.handleClose} chips={true}/>
           </div>
           :
-          <Fragment>
-            <Header logged={false}/>
-            <div className="paddinger">
-              <h4 className="red-message">No user is logged in.</h4>
-              <Button variant={"contained"} type="submit" className="form-button" onClick={this.logout}>Log in</Button>
-            </div>
-          </Fragment>
+          <NotLogged />
         }
       </Fragment>
     );

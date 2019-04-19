@@ -22,7 +22,7 @@ class ItemListHeader extends Component {
   };
 
   render() {
-    const {user} = this.props;
+    const {friend, debt} = this.props;
     const {open} = this.state;
     return (
       <Fragment>
@@ -30,8 +30,14 @@ class ItemListHeader extends Component {
           <div className="items-friend-info">
             <AccountCircle className="friend-icon"/>
             <div>
-              <div className="friend-name">{user}</div>
-              <div className="friend-total">owes you 32.42€</div>
+              <div className="friend-name">{friend.login}</div>
+              {debt == 0
+                ? <div className="friend-total settled">settled up</div>
+                : (debt < 0
+                    ? <div className="friend-total minus-amount">you owe {debt.substr(1)}€</div>
+                    : <div className="friend-total plus-amount">owes you {debt}€</div>
+                )
+              }
             </div>
           </div>
           <span className="spacer"/>

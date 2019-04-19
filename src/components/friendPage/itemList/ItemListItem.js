@@ -10,15 +10,16 @@ class ItemListItem extends Component {
   }
 
   render() {
+    const {item} = this.props;
     return (
       <Fragment>
         <ListItem className="items-list-item">
           <ListItemIcon>
             <Image className="image-icon"/>
           </ListItemIcon>
-          <ListItemText primary="vec" secondary="ja som platil 2.00" className="items-list-item-text"/>
+          <ListItemText primary={item.name} secondary={item.creator_id + ' paid ' + item.amount} className="items-list-item-text"/>
           <div className="spacer"/>
-          <ListItemText primary="2.00" className="items-list-item-right-text"/>
+          <ListItemText primary={item.amount} className="items-list-item-right-text"/>
         </ListItem>
         <Divider/>
       </Fragment>

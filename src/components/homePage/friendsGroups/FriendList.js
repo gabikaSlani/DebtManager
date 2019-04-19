@@ -19,7 +19,7 @@ class FriendList extends Component {
           <Link
             key={index}
             component={RouterLink}
-            to={"/friend/" + user.info.id + "/" + friend.id}
+            to={{pathname: ("/friend/" + user.info.id + "/" + friend.id), state: {user}}}
             className="list-item-link-friends-groups"
           >
           <FriendListItem index={index} friend={friend}/>
