@@ -7,5 +7,6 @@ router.get('/users/:id', db.getAllUsersExceptMeAndFriends);
 router.get('/add/friend/:id/:friendId', db.addFriend);
 router.get('/total/:id', db.getTotal);
 router.get('/friends/:id', db.getFriends);
+router.post('/addItem', db.addItem)
 
 module.exports = router;

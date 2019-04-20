@@ -4,4 +4,7 @@ const db = require('../queries');
 
 router.get('/:id', db.getUserById);
 router.get('/items/:id/:friendId', db.getItems);
+router.get('/settle/up/:id/:friendId', db.settleUp);
+
+
 module.exports = router;

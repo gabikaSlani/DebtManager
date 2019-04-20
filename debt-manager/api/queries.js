@@ -145,8 +145,14 @@ const getItems = (request, response) => {
     throw error;
   } else {
     console.log(userId, friendId);
-    pool.query('SELECT * FROM items JOIN chip_in_item as ch ON ch.item_id = items.id ' +
-      'WHERE (creator_id = $1 AND user_id = $2) OR (creator_id = $2 AND user_id = $1) ORDER BY date',
+    pool.query('SELECT items.id, items.name, items.amount, u.login as chipper, u.id as chipperId, ' +
+      'u1.login as creator, u1.id as creatorId, d.amount as debt, d.settled ' +
+      'FROM items ' +
+      'JOIN chip_in_item as ch ON ch.item_id = items.id AND ((creator_id = $1 AND user_id = $2) OR (creator_id = $2 AND user_id = $1)) ' +
+      'JOIN users as u on ch.user_id = u.id ' +
+      'JOIN users as u1 on items.creator_id = u1.id ' +
+      'JOIN debts as d on items.id = d.item_id AND ((d.receiver_id = $1 AND d.payer_id = $2) OR (d.receiver_id = $2 AND d.payer_id = $1)) ' +
+      'ORDER BY date DESC;',
       [userId, friendId], (error, results) => {
         if (error) {
           throw error;
@@ -157,9 +163,63 @@ const getItems = (request, response) => {
   }
 };
 
+const addItem = (request, response) => {
+  const {id, itemInfo} = request.body;
+  const amount = parseFloat(itemInfo.amount).toFixed(2);
+  const name = itemInfo.description;
+  const debt = (amount / (itemInfo.chosenFriends.length + 1)).toFixed(2);
+  tx(async client => {
+    const {rows} = await client.query('INSERT INTO items (name, amount, date, creator_id) VALUES ($1,$2,NOW(),$3) RETURNING *', [name, amount, id]);
+    const itemId = rows[0].id;
+    itemInfo.chosenFriends.forEach(async friend => {
+      await client.query('INSERT INTO chip_in_item (item_id, user_id) VALUES ($1,$2)', [itemId, friend.value]);
+      await client.query('INSERT INTO debts (settled, receiver_id, payer_id, item_id, amount) VALUES (false,$1,$2,$3,$4)',
+        [id, friend.value, itemId, debt])
+    });
+    await client.query('INSERT INTO chip_in_item (item_id, user_id) VALUES ($1,$2)', [itemId, id]);
+    console.log('hotovo');
+  })
+    .then(() => response.status(200).json('ok'))
+    .catch(error => console.log(error))
+};
+
+const settleUp = (request, response) => {
+  const userId = this.request.params.id;
+  const friendId = this.request.params.friendId;
+  if (isNaN(userId) || isNaN(friendId)) {
+    console.log('id is NaN');
+    throw error;
+  } else {
+    console.log('settling up:' + userId, friendId);
+    pool.query('UPDATE debts SET settled = true WHERE settled=false AND ' +
+      '((receiver_id = $1 AND payer_id = $2) OR (receiver_id = $2 AND payer_id = $1))',
+      [userId, friendId], (error, results) => {
+        if (error) {
+          throw error;
+        }
+        response.status(200).json('ok');
+      });
+  }
+};
+
 const encryptPassword = (password) => {
   let hash = bcrypt.hashSync(password, 10);
   return hash;
+};
+
+const tx = async(callback) => {
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    try {
+      await callback(client);
+      client.query('COMMIT')
+    } catch (e) {
+      client.query('ROLLBACK')
+    }
+  } finally {
+    client.release()
+  }
 };
 
 
@@ -172,5 +232,8 @@ module.exports = {
   getTotal,
   getFriends,
   getItems,
+  addItem,
+  settleUp,
+
 };
 
