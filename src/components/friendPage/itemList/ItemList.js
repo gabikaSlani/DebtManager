@@ -12,11 +12,11 @@ class ItemList extends Component {
   }
 
   render() {
-    const {friend, debt, items} = this.props;
+    const {items} = this.props;
 
     return (
       <Paper className="items-paper">
-        <List subheader={<ItemListHeader friend={friend} debt={debt}/>} className="items-list">
+        <List subheader={<ItemListHeader {...this.props}/>} className="items-list">
           {items.map((item, index) =>
             <ItemListItem key={index} item={item}/>
           )}

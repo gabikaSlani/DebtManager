@@ -46,12 +46,6 @@ class LoginForm extends Component {
       .catch(err => err);
   };
 
-  cleanFormData = () => {
-    let {formData} = this.state;
-    formData = {username: '', password: ''};
-    this.setState({formData});
-  };
-
   submit = () => {
     const {formData} = this.state;
     this.validData(formData.username, formData.password);

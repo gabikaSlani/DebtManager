@@ -17,6 +17,7 @@ class Group extends Component {
           <p>{userId}</p>
           <p>{groupId}</p>
         </Header>
+        <span className="settled"> TO DO </span>
       </div>
     );
   };

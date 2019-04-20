@@ -25,9 +25,11 @@ class HomePage extends Component {
     this.props.history.push('/');
   };
 
-  handleClick = () => {
+  newItem = () => {
     this.setState({open: true});
   };
+
+  newGroup = () => {};
 
   handleClose = () => {
     this.setState({open: false});
@@ -38,7 +40,7 @@ class HomePage extends Component {
   };
 
   render() {
-    const {user} = this.props;
+    const {user, reload} = this.props;
     const {open} = this.state;
     return (
       <Fragment>
@@ -56,15 +58,21 @@ class HomePage extends Component {
                     variant={"contained"}
                     className="new-button new-item-btn"
                     type="submit"
-                    onClick={this.handleClick}>
+                    onClick={this.newItem}>
                     New item
                   </Button>
                   <span className="spacer"/>
-                  <Button variant={"contained"} className="new-button new-group-btn" type="submit">New group</Button>
+                  <Button
+                    variant={"contained"}
+                    className="new-button new-group-btn"
+                    type="submit"
+                    onClick={this.newGroup}>
+                    New group
+                  </Button>
                 </div>
               </div>
             </div>
-            <AddItemPupUp open={open} handleClose={this.handleClose} chips={true}/>
+            <AddItemPupUp open={open} handleClose={this.handleClose} chips={true} friends={user.friends} reload={reload}/>
           </div>
           :
           <NotLogged />

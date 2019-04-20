@@ -7,14 +7,25 @@ import './itemList.css';
 
 class ItemListHeader extends Component {
 
-  state = {open: false}
-
   constructor(props) {
     super(props);
+    this.state = {open: false};
   }
 
-  handleClick = () => {
+  addItem = () => {
     this.setState({open: true});
+  };
+
+  settleUp = () => {
+    const {friend, reload, user} = this.props;
+    let url = 'http://localhost:9000/friend/settle/up/' + user.info.id + '/' + friend.id;
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        reload();
+      })
+      .catch(err => console.log(err))
   };
 
   handleClose = () => {
@@ -24,6 +35,7 @@ class ItemListHeader extends Component {
   render() {
     const {friend, debt} = this.props;
     const {open} = this.state;
+    const debtFloat = parseFloat(debt);
     return (
       <Fragment>
         <ListSubheader className="items-list-header">
@@ -31,22 +43,22 @@ class ItemListHeader extends Component {
             <AccountCircle className="friend-icon"/>
             <div>
               <div className="friend-name">{friend.login}</div>
-              {debt == 0
+              {debtFloat === 0
                 ? <div className="friend-total settled">settled up</div>
-                : (debt < 0
-                    ? <div className="friend-total minus-amount">you owe {debt.substr(1)}€</div>
-                    : <div className="friend-total plus-amount">owes you {debt}€</div>
+                : (debtFloat < 0
+                    ? <div className="friend-total minus-amount">you owe {debtFloat*(-1).toFixed(2)}€</div>
+                    : <div className="friend-total plus-amount">owes you {debtFloat.toFixed(2)}€</div>
                 )
               }
             </div>
           </div>
           <span className="spacer"/>
           <div className="items-list-header-buttons">
-            <Button className="button-green" onClick={this.handleClick}>Add item</Button>
-            <Button className="button-orange">Settle up</Button>
+            <Button className="button-green" onClick={this.addItem}>Add item</Button>
+            <Button className="button-orange" onClick={this.settleUp}>Settle up</Button>
           </div>
         </ListSubheader>
-          <AddItemPupUp open={open} handleClose={this.handleClose} chips={false}/>
+          <AddItemPupUp open={open} handleClose={this.handleClose} chips={false} {...this.props}/>
       </Fragment>
     );
   }

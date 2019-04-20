@@ -11,12 +11,6 @@ import {Cancel} from "@material-ui/icons";
 
 import "./formChips.css";
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-];
-
 function NoOptionsMessage(props) {
   return (
     <Typography {...props.innerProps}>
@@ -101,18 +95,38 @@ const components = {
 };
 
 class FormChips extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = {
-    single: null,
     multi: null,
   };
 
-  handleChange = name => value => {
-    this.setState({
+  friendsToOptions = () => {
+    const {friends} = this.props;
+    return friends.map(friend => {
+      return {value: friend.id, label: friend.login}}
+    );
+  };
+
+  setMultiOptions = async (name, value) => {
+    await this.setState({
       [name]: value,
     });
   };
 
+  handleChange = name => value => {
+    this.setMultiOptions(name, value)
+      .then(() => {
+        let {setChosenFriends, clearErrorMsg} = this.props;
+        setChosenFriends(value);
+        clearErrorMsg();
+      })
+  };
+
   render() {
+    const options = this.friendsToOptions();
     return (
       <div className="chips-root">
         <NoSsr>

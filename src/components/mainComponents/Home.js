@@ -12,18 +12,6 @@ class Home extends Component {
     };
   }
 
-  setUserInfo = (userInfo) => {
-    this.setState({user: {...this.state.user, info: userInfo}})
-  };
-
-  setUserTotal = (userTotal) => {
-    this.setState({user: {...this.state.user, total: userTotal}})
-  };
-
-  setUserFriends = (userFriends) => {
-    this.setState({user: {...this.state.user, friends: userFriends}})
-  };
-
   setUser = (user) => {
     this.setState({user: user});
   };
@@ -32,40 +20,50 @@ class Home extends Component {
     this.fetchUserInfo();
   };
 
+  reload = () => {
+    this.setState({loading: true});
+    this.fetchUserInfo();
+  };
+
   fetchUserInfo = () => {
+    console.log('zavolala som fetch user info');
     let url = 'http://localhost:9000/home/' + sessionStorage.getItem('logged');
     fetch(url)
       .then(res => res.json())
       .then(res => {
-        this.setUserInfo(res[0]);
+        this.setState({user: {...this.state.user, info: res[0]}})
         this.fetchUserTotal();
       })
       .catch(err => console.log(err));
   };
 
   fetchUserTotal = () => {
+    console.log('zavolala som fetch user total');
     let url = 'http://localhost:9000/home/total/' + sessionStorage.getItem('logged');
     fetch(url)
       .then(res => res.json())
       .then(res => {
-        this.setUserTotal(res);
+        this.setState({user: {...this.state.user, total: res}})
         this.fetchUserFriends();
       })
       .catch(err => console.log(err))
   };
 
   fetchUserFriends = () => {
+    console.log('zavolala som fetch user friends');
     let url = 'http://localhost:9000/home/friends/' + sessionStorage.getItem('logged');
     fetch(url)
       .then(res => res.json())
       .then(res => {
-        this.setUserFriends(res)
+        this.setState({user: {...this.state.user, friends: res}})
         this.setState({loading :false})
       })
       .catch(err => console.log(err))
   };
 
   render() {
+    console.log('renderujem');
+    console.log(this.state);
     const {user, loading} = this.state;
     return (
       <React.Fragment>
@@ -73,7 +71,7 @@ class Home extends Component {
           ? <LoginPage/>
           :
           <div className="main-component">
-            <HomePage user={user} setUser={this.setUser} {...this.props}/>
+            <HomePage user={user} setUser={this.setUser} {...this.props} reload={this.reload}/>
           </div>
         }
       </React.Fragment>

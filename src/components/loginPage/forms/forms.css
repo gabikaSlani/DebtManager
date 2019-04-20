@@ -18,6 +18,7 @@
     color: #f03228;
     font-weight: bold !important;
     float: left;
+    animation-delay: 3s !important;
 }
 
 .form-button{

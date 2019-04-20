@@ -12,7 +12,7 @@ class FriendPage extends Component {
   }
 
   render() {
-    const {user, friend, debt, items} = this.props;
+    const {user} = this.props;
     console.log('friend page');
     console.log(user);
     return (
@@ -20,7 +20,7 @@ class FriendPage extends Component {
         <Header logged={false}/>
         <UserHeader user={user}/>
         <div className="paddinger">
-          <ItemList friend={friend} debt={debt} items={items}/>
+          <ItemList {...this.props}/>
         </div>
       </Fragment>
     );

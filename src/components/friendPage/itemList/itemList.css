@@ -8,7 +8,7 @@
 .items-list{
     overflow-y: auto !important;
     height: 95% !important;
-    background-color: #f3f2f2 !important;
+    background-color: #e7e4e4 !important;
 }
 
 .items-list-header {
@@ -59,6 +59,9 @@
     font-weight: bold !important;
     line-height: normal;
 }
+.button-orange:hover{
+    background-color:  #fea31b !important;
+}
 
 .button-green {
     margin: 0 20px 0 0 !important;
@@ -66,6 +69,10 @@
     color: #2f2d2e !important;
     font-weight: bold !important;
     line-height: normal;
+}
+
+.button-green:hover{
+    background-color: #84ab3b !important;
 }
 
 .image-icon{
@@ -83,6 +90,8 @@
 
 .items-list-item-right-text{
     text-align:right !important;
+    padding-right: 16px !important;
+    font-weight: bold !important;
 }
 
 @media only screen and (max-width: 710px) {

@@ -12,12 +12,12 @@ class AddItemPupUp extends Component {
   }
 
   render() {
-    const {open, handleClose, chips} = this.props;
+    const {open, handleClose} = this.props;
     return (
       <Dialog open={open} onClose={handleClose} className="add-new-item-dialog">
         <div className="add-new-item-paper">
           <DialogTitle className="add-new-item-title">{"Add new item"}</DialogTitle>
-          <NewItemForm chips={chips} handleClose={handleClose}/>
+          <NewItemForm {...this.props}/>
         </div>
       </Dialog>
     );
