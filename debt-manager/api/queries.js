@@ -7,7 +7,8 @@ const pool = new Pool({
   host: 'packy.db.elephantsql.com',
   database: 'kynnpkiv',
   password: 'fvSlMx1s7ysidgc4rmeBGektYHNlxxGU',
-  port: 5432
+  port: 5432,
+  connectionLimit: 2
 });
 
 const getUserById = (request, response) => {
@@ -184,8 +185,8 @@ const addItem = (request, response) => {
 };
 
 const settleUp = (request, response) => {
-  const userId = this.request.params.id;
-  const friendId = this.request.params.friendId;
+  const userId = parseInt(request.params.id);
+  const friendId = parseInt(request.params.friendId);
   if (isNaN(userId) || isNaN(friendId)) {
     console.log('id is NaN');
     throw error;
@@ -202,12 +203,131 @@ const settleUp = (request, response) => {
   }
 };
 
+const addRequestAndNotification = (request, response) => {
+  const {user, friend, type} = request.body;
+  tx(async client => {
+    const result = await client.query('SELECT id FROM types WHERE name=$1', [type]);
+    const typeId = result.rows[0].id;
+    console.log('typeId:' + typeId);
+    const {rows} = await client.query('INSERT INTO requests (creation_date, responder_id, requester_id, state_id, type_id) ' +
+      'VALUES (NOW(),$1,$2,1,$3) RETURNING *', [friend.id, user.info.id, typeId]);
+    const requestId = rows[0].id;
+    const message = getMessage(typeId, user.info.login);
+    console.log('requestId: ' + requestId);
+    console.log('message: ' + message);
+    await client.query('INSERT INTO notifications (message, seen, receiver_id, type_id, request_id) VALUES ($1,false, $2,$3,$4)',
+      [message, friend.id, typeId, requestId]);
+    console.log('hotovo');
+  })
+    .then(() => response.status(201).json('ok'))
+    .catch(error => console.log(error))
+};
+
+const findRequest = (request, response) => {
+  const responderId = parseInt(request.params.responder);
+  const requesterId = parseInt(request.params.requester);
+  const typeId = parseInt(request.params.type);
+  if (isNaN(responderId) || isNaN(requesterId) || isNaN(typeId)) {
+    console.log('id is NaN');
+    throw error;
+  } else {
+    console.log(requesterId, responderId);
+    pool.query('SELECT * FROM requests WHERE responder_id=$1 AND requester_id=$2 AND type_id=$3 AND state_id!=2',
+      [responderId, requesterId, typeId], (error, results) => {
+        if (error) {
+          throw error;
+        }
+        console.log(results.rowCount > 0);
+        response.status(200).json(results.rowCount > 0);
+      });
+  }
+};
+
+const getNotifications = (request, response) => {
+  const id = request.params.id;
+  if (isNaN(id)) {
+    console.log('id is NaN');
+    throw error;
+  } else {
+    pool.query('SELECT n.id, n.message, n.type_id, t.name, n.seen, n.receiver_id, r.requester_id, u.login as requester_name ' +
+      'FROM ((notifications as n LEFT JOIN requests as r ON n.request_id=r.id) LEFT JOIN users as u ON r.requester_id=u.id )' +
+      'JOIN types as t on t.id=n.type_id WHERE n.receiver_id=$1 ORDER by n.id DESC ',
+      [id], (error, results) => {
+        if (error) {
+          throw error;
+        }
+        const result = notificationsDataStruct(results.rows);
+        response.status(200).json(result);
+      });
+  }
+};
+
+const notificationsDataStruct = (data) => {
+  let result = {};
+  result['pair_off'] = {count: 0, messages: []};
+  result['settle_up'] = {count: 0, messages: []};
+  result['action'] = {count: 0, messages: []};
+  for (let index in data) {
+    let obj = data[index];
+    if (obj.name === 'pair_off') {
+      if(!obj.seen) result['pair_off']['count']++;
+      result['pair_off']['messages'].push(obj);
+    } else if (obj.name === 'settle_up') {
+      if(!obj.seen) result['settle_up']['count']++;
+      result['settle_up']['messages'].push(obj);
+    } else {
+      if(!obj.seen) result['action']['count']++;
+      result['action']['messages'].push(obj);
+    }
+  }
+  return result;
+};
+
+const setSeen = (request, response) => {
+  const userId = parseInt(request.params.userId);
+  const typeId = parseInt(request.params.typeId);
+  if (isNaN(userId) || isNaN(typeId)) {
+    console.log('id is NaN');
+    throw error;
+  } else {
+    console.log(userId, typeId);
+    pool.query('UPDATE notifications SET seen=true WHERE receiver_id=$1 AND type_id=$2 ',
+      [userId, typeId], (error, results) => {
+        if (error) {
+          console.log(error);
+          throw error;
+        }
+        response.status(200).json('ok');
+      });
+  }
+};
+
+const updateAndAddNotification = (request, response) =>{
+  const {accept,notificationId,typeId,newMessage,updateMessage,receiverId} = request.body;
+  console.log(accept, notificationId, typeId, receiverId, newMessage, updateMessage);
+  tx(async client => {
+    const result = await client.query('SELECT request_id as id FROM notifications WHERE id=$1', [notificationId]);
+    const requestId = result.rows[0].id;
+    console.log('requestId=' + requestId);
+    accept
+      ? await client.query('UPDATE requests SET state_id=2 WHERE id=$1 ', [requestId])
+      : await client.query('UPDATE requests SET state_id=3 WHERE id=$1 ', [requestId]);
+
+    await client.query('UPDATE notifications SET message=$1, request_id=NULL WHERE id=$2 ', [updateMessage, notificationId]);
+    await client.query('INSERT INTO notifications (message, seen, receiver_id, type_id) VALUES ($1,false,$2,$3)',
+      [newMessage, receiverId, typeId]);
+    console.log('hotovo');
+  })
+    .then(() => response.status(201).json('ok'))
+    .catch(error => console.log(error))
+};
+
 const encryptPassword = (password) => {
   let hash = bcrypt.hashSync(password, 10);
   return hash;
 };
 
-const tx = async(callback) => {
+const tx = async (callback) => {
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
@@ -222,6 +342,15 @@ const tx = async(callback) => {
   }
 };
 
+const getMessage = (typeId, userName) => {
+  if (typeId === 1) {
+    return userName + ' wants to be paired off with you.';
+  } else if (typeId === 2) {
+    return userName + ' wants you to confirm that all your debts are settled up.';
+  } else {
+    return 'something wrong happened.';
+  }
+};
 
 module.exports = {
   getUserById,
@@ -234,6 +363,11 @@ module.exports = {
   getItems,
   addItem,
   settleUp,
+  addRequestAndNotification,
+  findRequest,
+  getNotifications,
+  setSeen,
+  updateAndAddNotification,
 
 };
 
