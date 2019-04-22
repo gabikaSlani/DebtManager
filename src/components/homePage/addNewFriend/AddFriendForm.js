@@ -13,6 +13,7 @@ import {AccountCircle, Search} from "@material-ui/icons";
 import AddFriendPopUp from "./AddFriendPopUp";
 
 import "./addNewFriend.css";
+import MessageDialog from "../../MessageDialog";
 
 
 class AddFriendForm extends Component {
@@ -23,7 +24,9 @@ class AddFriendForm extends Component {
     this.state = {
       all: [],
       displayed: [],
-      open: false,
+      openAddFriendPopUp: false,
+      openMessageDialog: false,
+      openMessageDialog2: false,
       dialogUser: null
     };
 
@@ -43,7 +46,7 @@ class AddFriendForm extends Component {
     this.fetchNotFriends()
       .then(res => {
         this.setAllAndDisplayed(res);
-    })
+      })
   }
 
   fetchNotFriends = () => {
@@ -66,22 +69,58 @@ class AddFriendForm extends Component {
     this.setState({displayed: filtered});
   };
 
-  handleClick = (item) => {
-    this.setState({dialogUser: item});
-    this.setState({open: true});
+  handleClick = (friend) => {
+    this.fetchIfUserAlreadySentRequest(friend);
   };
 
-    handleClose = () => {
+  fetchIfFriendSentRequest = (friend) => {
+    let url = 'http://localhost:9000/home/find-request/' + friend.id + '/' + sessionStorage.getItem('logged') + '/1';
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({dialogUser: friend});
+        res
+          ? this.setState({openMessageDialog2: true})
+          : this.setState({openAddFriendPopUp: true});
+      })
+      .catch(err => console.log(err));
+  };
+
+  fetchIfUserAlreadySentRequest = (friend) => {
+    let url = 'http://localhost:9000/home/find-request/' + sessionStorage.getItem('logged')+ '/' + friend.id  + '/1';
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({dialogUser: friend});
+        res
+          ? this.setState({openMessageDialog: true})
+          : this.fetchIfFriendSentRequest(friend)
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleClose = () => {
     this.fetchNotFriends()
       .then((res) => {
         this.asyncSetAll(res)
-          .then(() => {this.filterUsers(this.lastQuery) ;    this.setState({open: false});})
+          .then(() => {
+            this.filterUsers(this.lastQuery);
+            this.setState({openAddFriendPopUp: false});
+          })
       });
+  };
+
+  handleCloseMessage = () => {
+    this.setState({openMessageDialog: false});
+  };
+
+  handleCloseMessage2 = () => {
+    this.setState({openMessageDialog2: false});
   };
 
 
   render() {
-    const {displayed, dialogUser, open} = this.state;
+    const {displayed, dialogUser, openAddFriendPopUp, openMessageDialog, openMessageDialog2} = this.state;
 
     return (
       <Fragment>
@@ -111,14 +150,18 @@ class AddFriendForm extends Component {
             </List>
             :
             <List className="list-add-friend">
-            <span>No users found.</span>
+              <span>No users found.</span>
             </List>
           }
         </Paper>
-        <AddFriendPopUp open={open} friend={dialogUser} handleClose={this.handleClose} {...this.props}/>
+        <AddFriendPopUp open={openAddFriendPopUp} friend={dialogUser} handleClose={this.handleClose} {...this.props}/>
+        <MessageDialog open={openMessageDialog} handleClose={this.handleCloseMessage}
+                       message={'You have already sent request to ' + (dialogUser ? dialogUser.login : '')}/>
+        <MessageDialog open={openMessageDialog2} handleClose={this.handleCloseMessage2}
+                       message={(dialogUser ? dialogUser.login : '') + ' has already sent you request. You should answer it.'}/>
       </Fragment>
     );
   };
-};
+}
 
 export default AddFriendForm;

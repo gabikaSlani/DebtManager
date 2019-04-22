@@ -26,7 +26,6 @@ class Home extends Component {
   };
 
   fetchUserInfo = () => {
-    console.log('zavolala som fetch user info');
     let url = 'http://localhost:9000/home/' + sessionStorage.getItem('logged');
     fetch(url)
       .then(res => res.json())
@@ -38,7 +37,6 @@ class Home extends Component {
   };
 
   fetchUserTotal = () => {
-    console.log('zavolala som fetch user total');
     let url = 'http://localhost:9000/home/total/' + sessionStorage.getItem('logged');
     fetch(url)
       .then(res => res.json())
@@ -50,20 +48,30 @@ class Home extends Component {
   };
 
   fetchUserFriends = () => {
-    console.log('zavolala som fetch user friends');
     let url = 'http://localhost:9000/home/friends/' + sessionStorage.getItem('logged');
     fetch(url)
       .then(res => res.json())
       .then(res => {
         this.setState({user: {...this.state.user, friends: res}})
+        this.fetchNotifications();
+      })
+      .catch(err => console.log(err))
+  };
+
+  fetchNotifications = () => {
+    let url = 'http://localhost:9000/home/notifications/' + sessionStorage.getItem('logged');
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+
+        this.setState({user: {...this.state.user, notifications: res}});
+        console.log(this.state.user.notifications);
         this.setState({loading :false})
       })
       .catch(err => console.log(err))
   };
 
   render() {
-    console.log('renderujem');
-    console.log(this.state);
     const {user, loading} = this.state;
     return (
       <React.Fragment>

@@ -4,12 +4,26 @@ import {Button, Dialog, DialogActions, DialogTitle} from "@material-ui/core";
 import "./addNewFriend.css";
 
 const AddFriendPopUp = (props) => {
-  const {open, friend, handleClose} = props;
-  const friendName = friend ? friend.login : '';
+  const {open, user, handleClose, friend} = props;
+  const friendName = friend ? friend.login : '' ;
 
   const handleYes = () => {
-    let url = 'http://localhost:9000/home/add/friend/' + sessionStorage.getItem('logged') + '/' + friend.id;
-    fetch(url)
+    createRequestAndNotification();
+  };
+
+  const createRequestAndNotification = () => {
+    fetch('http://localhost:9000/home/new-request-and-notification', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: user,
+        friend: friend,
+        type: 'pair_off'
+      })
+    })
       .then(res => res.json())
       .then(() => handleClose())
       .catch(err => console.log(err));

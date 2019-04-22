@@ -12,7 +12,6 @@ class FriendList extends Component {
 
   render() {
     const {user} = this.props;
-    console.log(user);
     return (
       <List dense={false} className="list-friends-groups">
         {user.friends.map((friend, index) =>

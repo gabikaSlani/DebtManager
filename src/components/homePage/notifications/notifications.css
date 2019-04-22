@@ -26,7 +26,15 @@
 }
 
 .notification-list-item {
-    padding: 5px 0 !important;
+     padding: 5px 0 !important;
+ }
+
+.notification-list-item span {
+    font-weight: normal;
+}
+
+.colored span {
+    font-weight: bolder ;
 }
 
 .notification-list-item-text {

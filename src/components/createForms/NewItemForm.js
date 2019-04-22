@@ -43,7 +43,7 @@ class NewItemForm extends Component {
   };
 
   fetchAddItem = () => {
-    fetch('http://localhost:9000/home/addItem', {
+    fetch('http://localhost:9000/home/add-item', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -56,10 +56,9 @@ class NewItemForm extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         const {reload, handleClose} = this.props;
-        reload();
         handleClose();
+        reload();
       })
       .catch(err => err);
   };

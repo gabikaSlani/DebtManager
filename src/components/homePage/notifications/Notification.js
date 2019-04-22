@@ -4,30 +4,44 @@ import {Badge, ClickAwayListener, Grow, IconButton, List, Paper, Popper} from "@
 import ListItemWithButtons from "./ListItemWithButtons";
 
 import "./notifications.css";
+import ListItemWithText from "./ListItemWithText";
 
 class Notification extends Component {
 
   constructor(props) {
     super(props);
 
-    const {type} = props;
-
     this.state = {
-      type: type,
       open: false,
-      badgeNumber: 2,
-      isInvisible: false,
-      list: {
-
-      }
+      count: this.props.count,
+      messages: this.props.messages,
+      invisible: true
     };
+  }
+
+  componentDidMount() {
+    this.setState({invisible: this.state.count === 0});
   }
 
   handleToggle = (event) => {
     event.preventDefault();
     this.setState(state => ({open: !state.open}));
-    this.setState({badgeNumber: 0});
-    this.setState({isInvisible: true});
+    if (this.state.count > 0 && this.state.messages.length > 0 && !this.state.invisible) {
+      this.setState({invisible: true});
+      this.fetchSetSeen();
+    }
+    if(this.state.invisible){
+      this.setState({count: 0});
+    }
+  };
+
+  fetchSetSeen = () => {
+    const typeId = this.state.messages[0].type_id;
+    let url = 'http://localhost:9000/home/set-seen/' + sessionStorage.getItem('logged') + '/' + typeId;
+    fetch(url)
+      .then(res => res.json())
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
   };
 
   handleClose = event => {
@@ -36,30 +50,38 @@ class Notification extends Component {
       return;
     }
     this.setState({open: false});
-    // TODO set messages as seen on server
   };
 
-  generate(element) {
-    return [0, 1, 2, 3, 4, 5, 6].map(value =>
-      React.cloneElement(element, {
-        key: value,
-      }),
-    );
-  }
+  generate = () => {
+    const {messages, user, reload, friendReload} = this.props;
+    let children = [];
+    const values = Object.values(messages);
+    let counter = this.state.count;
+    for (const value of values){
+      value.requester_id
+      ? children.push(<ListItemWithButtons key={value.id} messageInfo={value}
+                                           user={user} reload={reload} friendReload={friendReload} colored={counter > 0}/>)
+        : children.push(<ListItemWithText key={value.id} text={value.message} colored={counter > 0}/>)
+      counter--;
+    }
+    return children;
+  };
 
   render() {
-    const {open, badgeNumber, isInvisible, type} = this.state;
-
+    const {open, count, invisible} = this.state;
+    const {type} = this.props;
     return (
       <Fragment>
         <IconButton color="inherit"
-                    buttonRef={node => { this.anchorEl = node; }}
+                    buttonRef={node => {
+                      this.anchorEl = node;
+                    }}
                     aria-owns={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleToggle}>
-          <Badge badgeContent={badgeNumber} color="primary" invisible={isInvisible} className="badge">
-            {type === 'friendship' ? <PersonAdd fontSize="large"/> :
-              (type === 'payment' ? <EuroSymbol fontSize="large"/> :
+          <Badge badgeContent={count} color="primary" invisible={invisible} className="badge">
+            {type === 'pair_off' ? <PersonAdd fontSize="large"/> :
+              (type === 'settle_up' ? <EuroSymbol fontSize="large"/> :
                 <Error fontSize="large"/>)
             }
           </Badge>
@@ -73,9 +95,7 @@ class Notification extends Component {
               <Paper className="notification-paper">
                 <ClickAwayListener onClickAway={this.handleClose}>
                   <List dense={false} className="notification-list">
-                    {this.generate(
-                      <ListItemWithButtons messageText='bl jvsodvdo s oisbdvoj scjb osb os obsoi bosb sdo bois i scib siob obo siocb isba' messageType='friendship'/>,
-                    )}
+                    {this.generate()}
                   </List>
                 </ClickAwayListener>
               </Paper>

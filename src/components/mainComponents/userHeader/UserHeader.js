@@ -8,6 +8,16 @@ import "../../paddinger.css";
 
 const UserHeader = (props) => {
   const {user} = props;
+
+  const generate = () => {
+    let children = [];
+    const entries = Object.entries(user.notifications);
+    for (const [key, value] of entries){
+     children.push(<Notification key={key} type={key} count={value.count} messages={value.messages} {...props}/>)
+    }
+    return children;
+  };
+
   return (
     <AppBar position="static" className="appBar-user paddinger">
       <Toolbar className="toolbar">
@@ -26,9 +36,7 @@ const UserHeader = (props) => {
         </div>
         <span className="spacer"/>
         <div>
-          <Notification type="friendship"/>
-          <Notification type="payment"/>
-          <Notification type="action"/>
+          {generate()}
         </div>
       </Toolbar>
     </AppBar>

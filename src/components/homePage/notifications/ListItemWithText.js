@@ -5,16 +5,12 @@ import "./notifications.css";
 
 const ListItemWithText = (props) => {
 
-  const {text} = props;
-
+  const {text,colored} = props;
   return (
     <Fragment>
-      <ListItem className="notification-list-item">
-        <ListItemText
-          primary={text}
-          className="notification-list-item-text"
-        />
-      </ListItem>
+        <ListItem className={colored ? "notification-list-item colored" : "notification-list-item"}>
+          <ListItemText primary={text} className="notification-list-item-text"/>
+        </ListItem>
       <Divider/>
     </Fragment>
   )

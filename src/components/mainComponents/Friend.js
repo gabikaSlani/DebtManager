@@ -19,14 +19,13 @@ class Friend extends Component {
       logged: false,
       isFriend: false
     };
-    this.reload = this.reload.bind(this);
   }
 
   componentDidMount() {
     this.fetchUserInfo();
   }
 
-  reload(){
+  friendReload(){
     this.setState({loading: true});
     this.fetchUserInfo();
   };
@@ -82,7 +81,19 @@ class Friend extends Component {
       .then(res => {
         this.setState({items: res});
         this.setDebt();
-        this.setState({loading: false});
+        this.fetchNotifications();
+      })
+      .catch(err => console.log(err))
+  };
+
+  fetchNotifications = () => {
+    let url = 'http://localhost:9000/home/notifications/' + sessionStorage.getItem('logged');
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({user: {...this.state.user, notifications: res}});
+        console.log(this.state.user.notifications);
+        this.setState({loading :false})
       })
       .catch(err => console.log(err))
   };
@@ -107,7 +118,7 @@ class Friend extends Component {
           ? <LoadingPage/>
           :
           <div className="main-component">
-            <FriendPage user={user} friend={friend} debt={debt} items={items} reload={this.reload}/>
+            <FriendPage user={user} friend={friend} debt={debt} items={items} friendReload={this.friendReload}/>
           </div>
         }
       </React.Fragment>

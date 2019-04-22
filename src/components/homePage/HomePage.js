@@ -48,7 +48,7 @@ class HomePage extends Component {
           ?
           <div>
             <Header logged={true} logout={this.logout}/>
-            <UserHeader user={user}/>
+            <UserHeader user={user} reload={reload}/>
             <div className="paddinger">
               <FriendsGroupsPaper user={user}/>
               <div className="new-group-and-friend">
