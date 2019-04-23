@@ -26,7 +26,7 @@ const AddFriendPopUp = (props) => {
     })
       .then(res => res.json())
       .then(() => handleClose())
-      .catch(err => console.log(err));
+      .catch(err => this.props.history.push('/error/500/'+err.message));
   };
 
   const handleNo = () => {

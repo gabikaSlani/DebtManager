@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 import FriendPage from "../friendPage/FriendPage";
 import './mainComponents.css';
 import LoadingPage from "./LoadingPage";
+import NotLogged from "./NotLogged";
+import NotFound from "./NotFound";
 
 class Friend extends Component {
 
   friendId = parseInt(this.props.match.params.friendId);
   userId = this.props.match.params.userId;
+  logged = (this.userId === sessionStorage.getItem('logged'));
 
   constructor(props) {
     super(props);
@@ -17,15 +20,17 @@ class Friend extends Component {
       debt: null,
       loading: true,
       logged: false,
-      isFriend: false
+      isFriend: true
     };
   }
 
   componentDidMount() {
-    this.fetchUserInfo();
+    if (this.logged) {
+      this.fetchUserInfo();
+    }
   }
 
-  friendReload(){
+  friendReload() {
     this.setState({loading: true});
     this.fetchUserInfo();
   };
@@ -38,7 +43,7 @@ class Friend extends Component {
         this.setState({user: {...this.state.user, info: res[0]}})
         this.fetchUserTotal();
       })
-      .catch(err => console.log(err));
+      .catch(err => this.props.history.push('/error/500/'+err.message));
   };
 
   fetchUserTotal = () => {
@@ -49,7 +54,7 @@ class Friend extends Component {
         this.setState({user: {...this.state.user, total: res}});
         this.fetchUserFriends();
       })
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
   };
 
   fetchUserFriends = () => {
@@ -58,9 +63,15 @@ class Friend extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({user: {...this.state.user, friends: res}});
-        this.fetchFriendInfo();
+        if(this.isMyFriend()){
+          this.fetchFriendInfo();
+        }
+        else{
+          this.setState({isFriend: false});
+          this.setState({loading: false})
+        }
       })
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
   };
 
   fetchFriendInfo = () => {
@@ -71,7 +82,7 @@ class Friend extends Component {
         this.setState({friend: res[0]});
         this.fetchItems();
       })
-      .catch(err => console.log(err));
+      .catch(err => this.props.history.push('/error/500/'+err.message));
   };
 
   fetchItems = () => {
@@ -83,7 +94,7 @@ class Friend extends Component {
         this.setDebt();
         this.fetchNotifications();
       })
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
   };
 
   fetchNotifications = () => {
@@ -92,10 +103,16 @@ class Friend extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({user: {...this.state.user, notifications: res}});
-        console.log(this.state.user.notifications);
-        this.setState({loading :false})
+        this.setState({loading: false})
       })
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
+  };
+
+  isMyFriend = () => {
+    const isFriend = (this.state.user.friends.filter(friend => {
+      return friend.id === this.friendId
+    })).length > 0;
+    return isFriend;
   };
 
   getFriendFromUrl = () => {
@@ -111,15 +128,22 @@ class Friend extends Component {
   };
 
   render() {
-    const {loading, user, friend, debt, items} = this.state;
+    const {loading, user, friend, debt, items, isFriend} = this.state;
     return (
       <React.Fragment>
-        {loading
-          ? <LoadingPage/>
-          :
-          <div className="main-component">
-            <FriendPage user={user} friend={friend} debt={debt} items={items} friendReload={this.friendReload}/>
-          </div>
+        {!this.logged
+          ? <NotLogged {...this.props}/>
+          : (loading
+              ? <LoadingPage/>
+              : (!isFriend
+                  ? <NotFound message={'Url is wrong. Cannot find friend.'}/>
+                  :
+                  <div className="main-component">
+                    <FriendPage user={user} friend={friend} debt={debt} items={items}
+                                friendReload={this.friendReload} {...this.props}/>
+                  </div>
+              )
+          )
         }
       </React.Fragment>
     );
@@ -127,68 +151,3 @@ class Friend extends Component {
 }
 
 export default Friend;
-
-// checkUrl = async () => {
-//   const userId = this.props.match.params.userId;
-//   const friendId = this.props.match.params.friendId;
-//   const logged = (userId === sessionStorage.getItem('logged'));
-//   await this.setState({logged: logged});
-//   const isFriend = (this.state.user.friends.filter(friend => {
-//     return friend.id == friendId
-//   })).length > 0;
-//   await this.setState({isFriend: isFriend});
-// };
-//
-// componentDidMount() {
-//   this.getUserFromLocation()
-//     .then(() => this.checkUrl()
-//       .then(() => this.setState({loading: false})));
-// }
-//
-// render() {
-//   const {loading, user, friend, isFriend, logged} = this.state;
-//   return (
-//     <React.Fragment>
-//       {loading
-//         ? <LoadingPage/>
-//         : (!logged
-//             ? <NotLogged/>
-//             : (!isFriend
-//                 ? <NotFound/>
-//                 :
-//                 <div className="main-component">
-//                   <FriendPage user={user}/>
-//                 </div>
-//             )
-//         )
-//       }
-//     </React.Fragment>
-//   );
-// };
-
-
-// reload = () => {
-//   this.setState({loading: true, user:null});
-//   this.fetchUserInfo();
-// };
-//
-//
-// getStateFromLocation = async () => {
-//   await this.setState({receivedState: this.props.location.state});
-// };
-//
-// componentDidMount() {
-//   this.getStateFromLocation()
-//     .then(() => {
-//       if (this.state.receivedState) {
-//         this.setState({user: this.state.receivedState.user});
-//         this.fetchFriendInfo();
-//         this.setDebt();
-//       }
-//       else{
-//           this.setState({loading: false})
-//       }
-//     })
-//     .catch((err => console.log(err))
-//   )
-// }

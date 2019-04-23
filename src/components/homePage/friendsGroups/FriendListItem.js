@@ -7,6 +7,7 @@ import "./friendsGroups.css";
 const FriendListItem = (props) => {
 
   const {index, friend} = props;
+  const debtFloat = parseFloat(friend.debt);
   return (
     <ListItem key={index} button className="list-item-friends-groups">
       <ListItemIcon>
@@ -14,11 +15,11 @@ const FriendListItem = (props) => {
       </ListItemIcon>
       <div>
         <div className="list-name-friends-groups">{friend.login}</div>
-        {friend.debt == 0 ?
+        {debtFloat === 0 ?
           <div className="list-total-friends-groups settled">settled up</div>
-          : (friend.debt < 0
-              ? <div className="list-total-friends-groups minus-amount">you owe {friend.debt.substr(1)}€</div>
-              : <div className="list-total-friends-groups plus-amount">owes you {friend.debt}€</div>
+          : (debtFloat < 0
+              ? <div className="list-total-friends-groups minus-amount">you owe {debtFloat * (-1).toFixed(2)}€</div>
+              : <div className="list-total-friends-groups plus-amount">owes you {debtFloat.toFixed(2)}€</div>
           )
         }
       </div>

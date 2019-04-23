@@ -1,27 +1,26 @@
-import React, {Component, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import Header from "../mainComponents/header/Header";
 import UserHeader from "../mainComponents/userHeader/UserHeader";
 import ItemList from "./itemList/ItemList";
 
 import "../paddinger.css";
 
-class FriendPage extends Component {
+const FriendPage = (props) => {
 
-  constructor(props) {
-    super(props);
-  }
+  const logout = () => {
+    window.sessionStorage.removeItem('logged');
+    props.history.push('/');
+  };
 
-  render() {
-    return (
-      <Fragment>
-        <Header logged={false}/>
-        <UserHeader {...this.props}/>
-        <div className="paddinger">
-          <ItemList {...this.props}/>
-        </div>
-      </Fragment>
-    );
-  }
-}
+  return (
+    <Fragment>
+      <Header logged={true} logout={logout}/>
+      <UserHeader {...props}/>
+      <div className="paddinger">
+        <ItemList {...props}/>
+      </div>
+    </Fragment>
+  );
+};
 
 export default FriendPage;

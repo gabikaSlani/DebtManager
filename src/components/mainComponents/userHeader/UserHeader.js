@@ -18,6 +18,7 @@ const UserHeader = (props) => {
     return children;
   };
 
+  console.log(user);
   return (
     <AppBar position="static" className="appBar-user paddinger">
       <Toolbar className="toolbar">
@@ -25,8 +26,8 @@ const UserHeader = (props) => {
           <AccountCircle className="user-icon"/>
           <div>
             <div className="user-name">{user.info.login}</div>
-            {user.total == 0
-              ? <div className="user-total settled">{user.total}€</div>
+            {user.total === 0
+              ? <div className="user-total settled">settled up</div>
               : (user.total < 0
                   ? <div className="user-total minus-amount">{user.total}€</div>
                   : <div className="user-total plus-amount">+{user.total}€</div>

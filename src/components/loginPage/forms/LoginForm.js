@@ -5,14 +5,18 @@ import {TextValidator, ValidatorForm} from 'react-material-ui-form-validator';
 import "./forms.css";
 
 class LoginForm extends Component {
-  state = {
-    formData: {
-      username: '',
-      password: ''
-    },
-    loginErrorMsg: '',
-    validForm: false
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      formData: {
+        username: '',
+        password: ''
+      },
+      loginErrorMsg: '',
+      validForm: false
+    };
+  }
 
   handleChange = (event) => {
     const {formData} = this.state;
@@ -43,7 +47,7 @@ class LoginForm extends Component {
           }
         }
       )
-      .catch(err => err);
+      .catch(err => this.props.history.push('/error/500/' + err.message));
   };
 
   submit = () => {

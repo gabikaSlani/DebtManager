@@ -16,9 +16,11 @@
 
 .user-icon {
     font-size: 55px !important;
+    margin-right: 10px;
 }
 
 .user-name {
+    text-align: left;
     font-size: 1.2em;
     font-weight: bold;
 }

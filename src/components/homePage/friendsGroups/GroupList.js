@@ -9,10 +9,7 @@ class GroupList extends Component {
     super(props);
 
     this.state = {
-      list: [
-        {name: 'Toms gift', debt: 1.28},
-        {name: 'Trip', debt: 15.45},
-        {name: 'Mom birthday', debt: 56.00}]
+      list: []
     };
   }
 

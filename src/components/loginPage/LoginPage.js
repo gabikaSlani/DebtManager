@@ -12,7 +12,7 @@ const LoginPage = (props) => {
       <Header logged={false}/>
       <div className="paddinger">
         <LoginForm {...props}/>
-        <RegistrationForm/>
+        <RegistrationForm {...props}/>
       </div>
     </Fragment>
   );

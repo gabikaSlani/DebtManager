@@ -9,15 +9,14 @@ import "./createForms.css";
 
 class NewItemForm extends Component {
 
-  state = {
-    amount: '',
-    description: '',
-    chosenFriends: [],
-    errorMsg: ''
-  };
-
   constructor(props) {
     super(props);
+    this.state = {
+      amount: '',
+      description: '',
+      chosenFriends: [],
+      errorMsg: ''
+    };
   }
 
   setErrorMsg = () => {
@@ -55,12 +54,36 @@ class NewItemForm extends Component {
       })
     })
       .then(res => res.json())
-      .then(res => {
+      .then((res) => {
+        console.log(res);
+        this.fetchAddNotification(res.debt);
+      })
+      .catch(err => this.props.history.push('/error/500/'+err.message));
+  };
+
+  fetchAddNotification = (debt) => {
+    const {user} = this.props;
+    const message = user.info.login + ' added new item "' + this.state.description + '". You owe ' + debt + '€';
+    console.log(message);
+    fetch('http://localhost:9000/home/add-action-notification', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: message,
+        receivers: this.state.chosenFriends,
+      })
+    })
+      .then(res => res.json())
+      .then((res) => {
         const {reload, handleClose} = this.props;
+        console.log(res);
         handleClose();
         reload();
       })
-      .catch(err => err);
+      .catch(err => this.props.history.push('/error/500/'+err.message));
   };
 
   handleChange = prop => event => {

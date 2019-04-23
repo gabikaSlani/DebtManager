@@ -5,18 +5,16 @@ import AddFriendForm from "./addNewFriend/AddFriendForm";
 import Header from "../mainComponents/header/Header";
 import UserHeader from "../mainComponents/userHeader/UserHeader";
 import AddItemPupUp from "../friendPage/addItemPopUp/AddItemPupUp";
+import NotLogged from "../mainComponents/NotLogged";
 
 import './homePage.css';
 import "../paddinger.css";
-import NotLogged from "../mainComponents/NotLogged";
-
 
 class HomePage extends Component {
 
-  state = {open: false};
-
   constructor(props) {
     super(props);
+    this.state = {open: false}
   }
 
   logout = () => {
@@ -40,7 +38,7 @@ class HomePage extends Component {
   };
 
   render() {
-    const {user, reload} = this.props;
+    const {user} = this.props;
     const {open} = this.state;
     return (
       <Fragment>
@@ -48,7 +46,7 @@ class HomePage extends Component {
           ?
           <div>
             <Header logged={true} logout={this.logout}/>
-            <UserHeader user={user} reload={reload}/>
+            <UserHeader {...this.props}/>
             <div className="paddinger">
               <FriendsGroupsPaper user={user}/>
               <div className="new-group-and-friend">
@@ -72,7 +70,7 @@ class HomePage extends Component {
                 </div>
               </div>
             </div>
-            <AddItemPupUp open={open} handleClose={this.handleClose} chips={true} friends={user.friends} reload={reload}/>
+            <AddItemPupUp open={open} handleClose={this.handleClose} chips={true} friends={user.friends} {...this.props}/>
           </div>
           :
           <NotLogged />
@@ -80,6 +78,6 @@ class HomePage extends Component {
       </Fragment>
     );
   }
-};
+}
 
 export default HomePage;

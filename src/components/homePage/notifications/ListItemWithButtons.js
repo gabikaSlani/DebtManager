@@ -26,8 +26,7 @@ class ListItemWithButtons extends Component {
     if (messageInfo.name === 'pair_off') {
       updateMessage = 'You have accepted pair off request from ' + messageInfo.requester_name;
       newMessage = user.info.login + ' has accepted your pair off request.';
-    }
-    else if (messageInfo.name === 'settle_up') {
+    } else if (messageInfo.name === 'settle_up') {
       updateMessage = 'You have accepted settle up request from ' + messageInfo.requester_name;
       newMessage = user.info.login + ' has accepted your settle up request.';
     }
@@ -45,8 +44,7 @@ class ListItemWithButtons extends Component {
     if (messageInfo.name === 'pair_off') {
       updateMessage = 'You have rejected pair off request from ' + messageInfo.requester_name;
       newMessage = user.info.login + ' has rejected your pair off request.';
-    }
-    else if (messageInfo.name === 'settle_up') {
+    } else if (messageInfo.name === 'settle_up') {
       updateMessage = 'You have rejected settle up request from ' + messageInfo.requester_name;
       newMessage = user.info.login + ' has rejected your settle up request.';
     }
@@ -74,23 +72,21 @@ class ListItemWithButtons extends Component {
     })
       .then(res => res.json())
       .then(() => {
-        if (accept){
-          console.log('je accept')
-          if(typeName === 'pair_off') {
+        if (accept) {
+          console.log('je accept');
+          if (typeName === 'pair_off') {
             console.log('typeName:' + typeName + '. Ma byt pair off');
             this.fetchAddFriend();
-          }
-          else {
+          } else {
             console.log('typeName:' + typeName + '. Ma byt settle up');
             this.fetchSettleUp();
           }
-        }
-        else{
-          this.props.reload();
-          this.props.friendReload();
+        } else {
+          if (this.props.reload) this.props.reload();
+          if (this.props.friendReload) this.props.friendReload();
         }
       })
-      .catch(err => err);
+      .catch(err => this.props.history.push('/error/500/' + err.message));
   };
 
   fetchAddFriend = () => {
@@ -98,8 +94,11 @@ class ListItemWithButtons extends Component {
     let url = 'http://localhost:9000/home/add-friend/' + sessionStorage.getItem('logged') + '/' + friendId;
     fetch(url)
       .then(res => res.json())
-      .then(() => {this.props.reload(); this.props.friendReload()})
-      .catch(err => console.log(err));
+      .then(() => {
+        if(this.props.reload) this.props.reload();
+        if (this.props.friendReload) this.props.friendReload();
+      })
+      .catch(err => this.props.history.push('/error/500/' + err.message));
   };
 
   fetchSettleUp = () => {
@@ -107,8 +106,11 @@ class ListItemWithButtons extends Component {
     const url = 'http://localhost:9000/friend/settle/' + sessionStorage.getItem('logged') + '/' + friendId;
     fetch(url)
       .then(res => res.json())
-      .then(() => {this.props.reload(); this.props.friendReload()})
-      .catch(err => console.log(err))
+      .then(() => {
+        if (this.props.reload) this.props.reload();
+        if (this.props.friendReload) this.props.friendReload();
+      })
+      .catch(err => this.props.history.push('/error/500/' + err.message))
   };
 
   render() {
@@ -120,7 +122,7 @@ class ListItemWithButtons extends Component {
           <ListItemWithText text={text}/>
           :
           <Fragment>
-            <ListItem className={colored ? "notification-list-item colored" : "notification-list-item"} >
+            <ListItem className={colored ? "notification-list-item colored" : "notification-list-item"}>
               <ListItemText
                 primary={text}
                 className="notification-list-item-text"

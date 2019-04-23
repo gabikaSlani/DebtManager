@@ -5,15 +5,18 @@ import {TextValidator, ValidatorForm} from 'react-material-ui-form-validator';
 import "./forms.css";
 
 class RegistrationForm extends Component {
-  state = {
-    formData: {
-      username: '',
-      password: '',
-      repeatPassword: ''
-    },
-    errorMsg: '',
-    openSnackbar: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      formData: {
+        username: '',
+        password: '',
+        repeatPassword: ''
+      },
+      errorMsg: '',
+      openSnackbar: false
+    };
+  }
 
   handleChange = (event) => {
     const {formData} = this.state;
@@ -47,7 +50,7 @@ class RegistrationForm extends Component {
       return true;
     });
     ValidatorForm.addValidationRule('maxSize15', (value) => {
-      if ( value && value.length > 15) {
+      if (value && value.length > 15) {
         return false;
       }
       return true;
@@ -68,15 +71,14 @@ class RegistrationForm extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        if(res){
+        if (res) {
           this.setState({openSnackbar: true});
           this.cleanFormData();
-        }
-        else {
+        } else {
           this.setState({errorMsg: 'Username already exists.'});
         }
       })
-      .catch(err => err);
+      .catch(err => this.props.history.push('/error/500/' + err.message));
   };
 
   cleanFormData = () => {

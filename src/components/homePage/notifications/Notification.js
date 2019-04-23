@@ -41,7 +41,7 @@ class Notification extends Component {
     fetch(url)
       .then(res => res.json())
       .then(res => console.log(res))
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
   };
 
   handleClose = event => {
@@ -53,15 +53,15 @@ class Notification extends Component {
   };
 
   generate = () => {
-    const {messages, user, reload, friendReload} = this.props;
+    const {messages, reload, friendReload, user} = this.props;
     let children = [];
     const values = Object.values(messages);
     let counter = this.state.count;
     for (const value of values){
       value.requester_id
-      ? children.push(<ListItemWithButtons key={value.id} messageInfo={value}
+      ? children.push(<ListItemWithButtons key={value.id} messageInfo={value} {...this.props}
                                            user={user} reload={reload} friendReload={friendReload} colored={counter > 0}/>)
-        : children.push(<ListItemWithText key={value.id} text={value.message} colored={counter > 0}/>)
+        : children.push(<ListItemWithText key={value.id} text={value.message} colored={counter > 0}/>);
       counter--;
     }
     return children;

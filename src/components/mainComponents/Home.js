@@ -33,7 +33,7 @@ class Home extends Component {
         this.setState({user: {...this.state.user, info: res[0]}})
         this.fetchUserTotal();
       })
-      .catch(err => console.log(err));
+      .catch(err => this.props.history.push('/error/500/'+err.message));
   };
 
   fetchUserTotal = () => {
@@ -44,7 +44,7 @@ class Home extends Component {
         this.setState({user: {...this.state.user, total: res}})
         this.fetchUserFriends();
       })
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
   };
 
   fetchUserFriends = () => {
@@ -55,7 +55,7 @@ class Home extends Component {
         this.setState({user: {...this.state.user, friends: res}})
         this.fetchNotifications();
       })
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
   };
 
   fetchNotifications = () => {
@@ -68,7 +68,7 @@ class Home extends Component {
         console.log(this.state.user.notifications);
         this.setState({loading :false})
       })
-      .catch(err => console.log(err))
+      .catch(err => this.props.history.push('/error/500/'+err.message))
   };
 
   render() {
