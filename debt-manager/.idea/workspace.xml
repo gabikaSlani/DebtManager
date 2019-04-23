@@ -2,26 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b77ba13-682e-487b-82f6-295c3808543a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/MessageDialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/friend.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/friend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client" beforeDir="false" afterPath="$PROJECT_DIR$/client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/createForms/NewGroupForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/createForms/NewGroupForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/createForms/NewItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/createForms/NewItemForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/friendPage/FriendPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/friendPage/FriendPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/AddItemPupUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/AddItemPupUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/homePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/HomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendPopUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendPopUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/GroupList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/GroupList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithText.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithText.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/homePage/notifications/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/notifications/Notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/homePage/notifications/notifications.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homePage/notifications/notifications.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/loginPage/forms/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/loginPage/forms/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/loginPage/forms/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/loginPage/forms/RegistrationForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/ErrorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/ErrorPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/Friend.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/Friend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/NotLogged.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/NotLogged.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/mainComponents.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/mainComponents.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/UserHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/UserHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/userHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/userHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,10 +48,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListHeader.js">
+        <entry file="file://$PROJECT_DIR$/client/src/components/createForms/NewItemForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-64">
-              <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+            <state relative-caret-position="-102">
+              <caret line="85" column="70" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -50,28 +60,106 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendForm.js">
+        <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/AddItemPupUp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="96" column="49" lean-forward="true" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/queries.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="234" column="84" lean-forward="true" selection-start-line="234" selection-start-column="84" selection-end-line="234" selection-end-column="84" />
+            <state relative-caret-position="238">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/home.js">
+        <entry file="file://$PROJECT_DIR$/api/queries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+            <state relative-caret-position="339">
+              <caret line="141" column="45" lean-forward="true" selection-start-line="141" selection-start-column="45" selection-end-line="141" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/homePage/HomePage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="81" column="77" selection-start-line="81" selection-start-column="77" selection-end-line="81" selection-end-column="77" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/FriendPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Friend.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="140" column="50" lean-forward="true" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/Notification.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="88" column="101" lean-forward="true" selection-start-line="88" selection-start-column="101" selection-end-line="88" selection-end-column="101" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithButtons.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/userHeader/UserHeader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,41 +171,42 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console</find>
-      <find>console.log</find>
-      <find>method</find>
-      <find>post</find>
-      <find>addItem</find>
-      <find>open</find>
-      <find>friend</find>
-      <find>url</find>
-      <find>pair</find>
-      <find>connec</find>
-      <find>connect</find>
-      <find>for</find>
-      <find>rows</find>
-      <find>count</find>
-      <find>getNotifi</find>
-      <find>notifications</find>
-      <find>foreach</find>
-      <find>map</find>
-      <find>fetch</find>
-      <find>fore</find>
-      <find>handleY</find>
-      <find>POST</find>
-      <find>relo</find>
-      <find>MessageD</find>
-      <find>update-and</find>
       <find>new-reque</find>
       <find>Snackbar</find>
       <find>Snack</find>
       <find>#</find>
       <find>reload</find>
+      <find>counter</find>
+      <find>addItem</find>
+      <find>additem</find>
+      <find>NewItemForm</find>
+      <find>addNo</find>
+      <find>parse</find>
+      <find>location</find>
+      <find>match.pa</find>
+      <find>color: white</find>
+      <find>logout</find>
+      <find>error</find>
+      <find>this.props.history.push('/error/500/'+err.message)</find>
+      <find>&lt;AddFriendPop</find>
+      <find>&lt;AddFrien</find>
+      <find>&lt;NewItem</find>
+      <find>&lt;AddItem</find>
+      <find>&lt;Noti</find>
+      <find>&lt;UserH</find>
+      <find>&lt;User</find>
+      <find>this.props.frie</find>
+      <find>this.props.frien</find>
+      <find>friendRel</find>
+      <find>findF</find>
+      <find>find-re</find>
+      <find>findRe</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager</dir>
@@ -129,63 +218,63 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
     <option name="RECENT_COMMON_BRANCH" value="devAPI" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/components/createForms/NewItemFormWithChips.js" />
-        <option value="$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp.css" />
-        <option value="$PROJECT_DIR$/client/src/components/createForms/createForms.css" />
-        <option value="$PROJECT_DIR$/client/src/components/createForms/newItemFormWithChips/formChips.css" />
-        <option value="$PROJECT_DIR$/client/src/components/createForms/newItemFormWithChips/FormChips.js" />
         <option value="$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/addItemPopUp.css" />
-        <option value="$PROJECT_DIR$/client/src/components/mainComponents/ErrorPage.js" />
-        <option value="$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js" />
         <option value="$PROJECT_DIR$/api/routes/login.js" />
         <option value="$PROJECT_DIR$/client/src/components/mainComponents/Login.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendsGroupsPaper.js" />
-        <option value="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/userHeader.css" />
         <option value="$PROJECT_DIR$/client/src/components/mainComponents/LoadingPage.js" />
-        <option value="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendListItem.js" />
         <option value="$PROJECT_DIR$/client/src/components/paddinger.css" />
         <option value="$PROJECT_DIR$/client/src/components/homePage/homePage.css" />
-        <option value="$PROJECT_DIR$/client/src/components/mainComponents/mainComponents.css" />
         <option value="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/NotLogged.js" />
-        <option value="$PROJECT_DIR$/client/src/components/mainComponents/NotLogged.js" />
         <option value="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/friendsGroups.css" />
         <option value="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/addNewFriend.css" />
         <option value="$PROJECT_DIR$/client/src/components/friendPage/itemList/itemList.css" />
-        <option value="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListItem.js" />
         <option value="$PROJECT_DIR$/client/src/components/mainComponents/Group.js" />
         <option value="$PROJECT_DIR$/client/src/components/loginPage/forms/forms.css" />
         <option value="$PROJECT_DIR$/client/src/components/createForms/formChips/FormChips.js" />
-        <option value="$PROJECT_DIR$/client/src/components/loginPage/forms/LoginForm.js" />
-        <option value="$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/AddItemPupUp.js" />
-        <option value="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemList.js" />
         <option value="$PROJECT_DIR$/api/app.js" />
         <option value="$PROJECT_DIR$/api/routes/friend.js" />
-        <option value="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendList.js" />
-        <option value="$PROJECT_DIR$/client/src/components/createForms/NewItemForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/MessageDialog.js" />
-        <option value="$PROJECT_DIR$/client/src/components/mainComponents/Home.js" />
-        <option value="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendPopUp.js" />
-        <option value="$PROJECT_DIR$/client/src/components/homePage/HomePage.js" />
-        <option value="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/UserHeader.js" />
-        <option value="$PROJECT_DIR$/client/src/components/loginPage/forms/RegistrationForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/homePage/notifications/notifications.css" />
         <option value="$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithText.js" />
-        <option value="$PROJECT_DIR$/client/src/components/homePage/notifications/Notification.js" />
-        <option value="$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithButtons.js" />
-        <option value="$PROJECT_DIR$/client/src/components/friendPage/FriendPage.js" />
-        <option value="$PROJECT_DIR$/client/src/components/mainComponents/Friend.js" />
-        <option value="$PROJECT_DIR$/api/routes/home.js" />
-        <option value="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListHeader.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/now.json" />
+        <option value="$PROJECT_DIR$/api/routes/home.js" />
+        <option value="$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/AddItemPupUp.js" />
+        <option value="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemList.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendList.js" />
+        <option value="$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListItem.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendListItem.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/UserHeader.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/userHeader/userHeader.css" />
+        <option value="$PROJECT_DIR$/client/src/components/friendPage/FriendPage.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/NotLogged.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/mainComponents.css" />
+        <option value="$PROJECT_DIR$/client/src/components/createForms/NewGroupForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/friendsGroups/GroupList.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/NotFound.js" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/ErrorPage.js" />
+        <option value="$PROJECT_DIR$/client/src/components/createForms/NewItemForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendPopUp.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/Home.js" />
+        <option value="$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js" />
+        <option value="$PROJECT_DIR$/client/src/components/loginPage/forms/LoginForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/loginPage/forms/RegistrationForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/HomePage.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/notifications/Notification.js" />
+        <option value="$PROJECT_DIR$/client/src/components/mainComponents/Friend.js" />
         <option value="$PROJECT_DIR$/api/queries.js" />
+        <option value="$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithButtons.js" />
       </list>
     </option>
   </component>
@@ -201,7 +290,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,12 +305,6 @@
             <path>
               <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -237,40 +319,6 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="friendPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="friendPage" type="462c0819:PsiDirectoryNode" />
-              <item name="itemList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homePage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="debt-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homePage" type="462c0819:PsiDirectoryNode" />
-              <item name="addNewFriend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="debt-manager" type="b2602c69:ProjectViewProjectNode" />
@@ -284,6 +332,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,15 +346,15 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager\client\src\components\mainComponents\header" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager\client\src\components\mainComponents" />
       <recent name="C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager" />
       <recent name="C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager\client\src\components\friendPage\itemList" />
       <recent name="C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager\client\src\components\createForms\newItemFormWithChips" />
       <recent name="C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager\client\src\components\friendPage\addItemPopUp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gabik\Documents\MATFYZ\4.L\Tvorba internetových aplikácií\projekt\debt-manager\client\src\components\mainComponents\header" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -352,7 +401,8 @@
       <workItem from="1555765421551" duration="26144000" />
       <workItem from="1555864383044" duration="3814000" />
       <workItem from="1555919040019" duration="32541000" />
-      <workItem from="1555958890428" duration="16628000" />
+      <workItem from="1555958890428" duration="16786000" />
+      <workItem from="1556016622126" duration="23191000" />
     </task>
     <task id="LOCAL-00001" summary="login page">
       <created>1554502754704</created>
@@ -445,11 +495,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555797161986</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="notifications">
+      <created>1555976001014</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555976001014</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353601000" />
+    <option name="totallyTimeSpent" value="376950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,8 +532,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49966952" weight="0.49008498" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49966952" weight="0.34419262" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31161472" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.34135976" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -568,112 +625,15 @@
     <MESSAGE value="friend list" />
     <MESSAGE value="friend page" />
     <MESSAGE value="add item" />
-    <option name="LAST_COMMIT_MESSAGE" value="add item" />
+    <MESSAGE value="notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="notifications" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/RegistrationForm.js" />
-    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/loginForm.module.css" />
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/@material-ui/core/SvgIcon/SvgIcon.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/@material-ui/core/ListItemIcon/ListItemIcon.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/@material-ui/core/ListItemText/ListItemText.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/mainComponents.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/LoadingPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/friendsGroups.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendsGroupsPaper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/NotFound.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/ErrorPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -691,16 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Group.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/node_modules/@material-ui/core/Snackbar/Snackbar.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -712,27 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/forms/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="77" column="53" lean-forward="true" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/createForms/formChips/FormChips.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="110" column="4" lean-forward="true" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/NotLogged.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -750,44 +679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/friend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/AddItemPupUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/createForms/NewItemForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="81" column="22" lean-forward="true" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -798,19 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/addNewFriend/addNewFriend.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/MessageDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/paddinger.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -818,51 +700,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Home.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/notifications.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/now.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="60" selection-start-line="60" selection-end-line="71" selection-end-column="4" />
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/userHeader/userHeader.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/NotLogged.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/createForms/formChips/FormChips.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326">
+          <caret line="110" column="4" lean-forward="true" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/createForms/createForms.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/createForms/NewGroupForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/mainComponents.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendsGroupsPaper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/HomePage.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/GroupList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="50" column="50" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendPopUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="170">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/forms/RegistrationForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/notifications.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -876,88 +833,223 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/userHeader/UserHeader.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/addNewFriend/addNewFriend.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/header/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="-34">
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithButtons.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Group.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="109" column="67" selection-start-line="109" selection-start-column="67" selection-end-line="109" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Friend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/Notification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="62" column="33" lean-forward="true" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/FriendPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/friendsGroups/FriendList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+        <state relative-caret-position="292">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/home.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/LoadingPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendForm.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/MessageDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/ErrorPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/NotFound.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/LoginPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/forms/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/loginPage/forms/RegistrationForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="96" column="49" lean-forward="true" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/itemList/ItemListHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendPopUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="43" column="57" lean-forward="true" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/addNewFriend/AddFriendForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="98" column="70" selection-start-line="98" selection-start-column="70" selection-end-line="98" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/createForms/NewItemForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="85" column="70" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/addItemPopUp/AddItemPupUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="81" column="77" selection-start-line="81" selection-start-column="77" selection-end-line="81" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/userHeader/UserHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/mainComponents/Friend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="140" column="50" lean-forward="true" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/friendPage/FriendPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/queries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="234" column="84" lean-forward="true" selection-start-line="234" selection-start-column="84" selection-end-line="234" selection-end-column="84" />
+        <state relative-caret-position="339">
+          <caret line="141" column="45" lean-forward="true" selection-start-line="141" selection-start-column="45" selection-end-line="141" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/Notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="88" column="101" lean-forward="true" selection-start-line="88" selection-start-column="101" selection-end-line="88" selection-end-column="101" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/homePage/notifications/ListItemWithButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

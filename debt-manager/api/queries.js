@@ -180,8 +180,11 @@ const addItem = (request, response) => {
     await client.query('INSERT INTO chip_in_item (item_id, user_id) VALUES ($1,$2)', [itemId, id]);
     console.log('hotovo');
   })
-    .then(() => response.status(200).json('ok'))
-    .catch(error => console.log(error))
+    .then(() => response.status(200).json({debt: debt}))
+    .catch((error) => {
+      console.log(error);
+      throw error;
+    })
 };
 
 const settleUp = (request, response) => {
@@ -220,7 +223,10 @@ const addRequestAndNotification = (request, response) => {
     console.log('hotovo');
   })
     .then(() => response.status(201).json('ok'))
-    .catch(error => console.log(error))
+    .catch((error) => {
+      console.log(error);
+      throw error;
+    })
 };
 
 const findRequest = (request, response) => {
@@ -232,7 +238,7 @@ const findRequest = (request, response) => {
     throw error;
   } else {
     console.log(requesterId, responderId);
-    pool.query('SELECT * FROM requests WHERE responder_id=$1 AND requester_id=$2 AND type_id=$3 AND state_id!=2',
+    pool.query('SELECT * FROM requests WHERE responder_id=$1 AND requester_id=$2 AND type_id=$3 AND state_id=1',
       [responderId, requesterId, typeId], (error, results) => {
         if (error) {
           throw error;
@@ -319,7 +325,10 @@ const updateAndAddNotification = (request, response) =>{
     console.log('hotovo');
   })
     .then(() => response.status(201).json('ok'))
-    .catch(error => console.log(error))
+    .catch((error) => {
+      console.log(error);
+      throw error;
+    })
 };
 
 const encryptPassword = (password) => {
@@ -352,6 +361,22 @@ const getMessage = (typeId, userName) => {
   }
 };
 
+const addActionNotification  = (request, response) => {
+  const {message, receivers} = request.body;
+  console.log(receivers, message);
+  tx(async client => {
+    receivers.forEach(async receiver => {
+      await client.query('INSERT INTO notifications (message, seen, receiver_id, type_id) VALUES ($1,false,$2,3) ',
+        [message, receiver.value]);
+    });
+  })
+    .then(() => response.status(200).json('ok'))
+    .catch((error) => {
+      console.log(error);
+      throw error;
+    })
+};
+
 module.exports = {
   getUserById,
   createUser,
@@ -368,6 +393,7 @@ module.exports = {
   getNotifications,
   setSeen,
   updateAndAddNotification,
+  addActionNotification,
 
 };
 

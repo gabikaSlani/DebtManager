@@ -12,6 +12,7 @@ router.get('/notifications/:id', db.getNotifications);
 router.get('/set-seen/:userId/:typeId', db.setSeen);
 
 router.post('/add-item', db.addItem);
+router.post('/add-action-notification', db.addActionNotification);
 router.post('/new-request-and-notification', db.addRequestAndNotification);
 router.post('/update-and-add-notification', db.updateAndAddNotification);
 
